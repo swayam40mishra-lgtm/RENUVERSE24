@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ve Maahi</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <div class="background-glow"></div>
+
+    <section class="hero-card">
+      <header class="hero-header">
+        <div class="eyebrow">Ve Maahi • Emotional Scene</div>
+        <h1 class="main-title">O Maahi Ve</h1>
+        <p class="subtitle">It’s showing my emotions towards you.</p>
+      </header>
+
+      <main class="lyrics-section">
+        <div class="lyrics-frame" id="lyricsFrame">
+          <p class="lyric-line active" data-time="0">O maahi ve... o maahi ve...</p>
+          <p class="lyric-line" data-time="5200">Maahi mainu chhadyo naa...</p>
+          <p class="lyric-line" data-time="10200">Ke tere bin dil naiyo lagna...</p>
+          <p class="lyric-line" data-time="15600">Jithe vi tu chalna ae...</p>
+          <p class="lyric-line" data-time="21000">Maahi main tere pichhe pichhe chalna...</p>
+        </div>
+      </main>
+
+      <footer class="hero-footer">
+        <div class="credit">A Swayam Mishra Craft</div>
+        <button class="next-btn" id="nextBtn" type="button">Next</button>
+      </footer>
+    </section>
+  </div>
+
+  <div class="start-overlay" id="startOverlay">
+    <div class="start-box">
+      <h2>Feel the lyrics</h2>
+      <p>Tap to begin the music and reveal the scene.</p>
+      <button class="start-btn" id="startBtn" type="button">Tap to Begin</button>
+    </div>
+  </div>
+
+  <audio id="song" preload="auto">
+    <source src="ve-maahi.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
