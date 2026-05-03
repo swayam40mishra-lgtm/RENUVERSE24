@@ -1,10 +1,13 @@
+// ==========================
+// ELEMENTS
+// ==========================
 const screens = {
   s1: document.getElementById("screen1"),
   s2: document.getElementById("screen2"),
   s3: document.getElementById("screen3")
 };
 
-const elements = {
+const el = {
   t1: document.getElementById("t1"),
   t2: document.getElementById("t2"),
   t3: document.getElementById("t3"),
@@ -19,80 +22,97 @@ const elements = {
   audio: document.getElementById("player")
 };
 
-/* -----------------------------
-   Utility Functions
------------------------------ */
+// ==========================
+// UTILITIES
+// ==========================
 
-// delay helper (clean async timing)
-const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+// delay
+const wait = (ms) => new Promise(r => setTimeout(r, ms));
 
-// show animation
-const reveal = (el) => {
-  if (el) el.classList.add("show");
-};
+// show element
+const show = (e) => e && e.classList.add("show");
 
-// switch screens smoothly
-const switchScreen = (from, to) => {
+// hide (for future control if needed)
+const hide = (e) => e && e.classList.remove("show");
+
+// switch screens
+const switchScreen = async (from, to) => {
   from.classList.remove("active");
+  await wait(400); // small fade gap
   to.classList.add("active");
 };
 
-/* -----------------------------
-   Flow Controller (MAIN LOGIC)
------------------------------ */
+// user skip control
+let skip = false;
+document.body.addEventListener("click", () => {
+  skip = true;
+});
 
-const runExperience = async () => {
-
-  /* -------- Screen 1 -------- */
-  await wait(500);
-  reveal(elements.t1);
-
-  await wait(1000);
-  reveal(elements.t2);
-
-  await wait(2000);
-
-  /* -------- Screen 2 -------- */
-  switchScreen(screens.s1, screens.s2);
-
-  await wait(500);
-  reveal(elements.t3);
-
-  // try autoplay (may fail due to browser rules)
-  if (elements.audio) {
-    elements.audio.volume = 0.7;
-    elements.audio.play().catch(() => {
-      console.log("Autoplay blocked (normal)");
-    });
+// smart wait (can skip)
+const smartWait = async (time) => {
+  let step = 100;
+  for (let t = 0; t < time; t += step) {
+    if (skip) break;
+    await wait(step);
   }
-
-  // lyrics reveal (clean loop)
-  for (let i = 0; i < elements.lyrics.length; i++) {
-    await wait(1200);
-    reveal(elements.lyrics[i]);
-  }
-
-  await wait(2000);
-
-  /* -------- Screen 3 -------- */
-  switchScreen(screens.s2, screens.s3);
-
-  await wait(600);
-  reveal(elements.finalText);
+  skip = false;
 };
 
-/* -----------------------------
-   Button Action
------------------------------ */
+// ==========================
+// MAIN FLOW (SCENE TIMELINE)
+// ==========================
 
-elements.btn.addEventListener("click", () => {
+const run = async () => {
+
+  // 🎬 SCENE 1 — ENTRY SILENCE
+  await smartWait(2000); // pause before anything
+
+  show(el.t1); // "Received parcel?"
+  await smartWait(3500); // let it sit
+
+  show(el.t2); // "Hope you are doing well"
+  await smartWait(5000); // emotional gap
+
+  // 🎬 TRANSITION
+  await switchScreen(screens.s1, screens.s2);
+
+  // 🎬 SCENE 2 — MESSAGE
+  await smartWait(2500);
+  show(el.t3);
+
+  // 🎵 audio start softly
+  if (el.audio) {
+    el.audio.volume = 0.4;
+    el.audio.play().catch(() => {});
+  }
+
+  await smartWait(4000);
+
+  // 🎬 LYRICS (very slow, breathing space)
+  for (let line of el.lyrics) {
+    show(line);
+    await smartWait(4200); // 👈 very slow (this is key)
+  }
+
+  await smartWait(6000);
+
+  // 🎬 FINAL TRANSITION
+  await switchScreen(screens.s2, screens.s3);
+
+  await smartWait(3000);
+
+  show(el.finalText);
+
+};
+
+// ==========================
+// BUTTON
+// ==========================
+el.btn.onclick = () => {
   window.location.href = "https://wa.me/916394400744";
-});
+};
 
-/* -----------------------------
-   Start Experience
------------------------------ */
-
-window.addEventListener("load", () => {
-  runExperience();
-});
+// ==========================
+// START
+// ==========================
+window.onload = run;
