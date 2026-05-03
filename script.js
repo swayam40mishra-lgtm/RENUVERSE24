@@ -1,73 +1,98 @@
-const song = document.getElementById("song");
-const startOverlay = document.getElementById("startOverlay");
-const startBtn = document.getElementById("startBtn");
-const nextBtn = document.getElementById("nextBtn");
-const lyricLines = Array.from(document.querySelectorAll(".lyric-line"));
+const screens = {
+  s1: document.getElementById("screen1"),
+  s2: document.getElementById("screen2"),
+  s3: document.getElementById("screen3")
+};
 
-let timers = [];
+const elements = {
+  t1: document.getElementById("t1"),
+  t2: document.getElementById("t2"),
+  t3: document.getElementById("t3"),
+  finalText: document.getElementById("finalText"),
+  lyrics: [
+    document.getElementById("l1"),
+    document.getElementById("l2"),
+    document.getElementById("l3"),
+    document.getElementById("l4")
+  ],
+  btn: document.getElementById("btn"),
+  audio: document.getElementById("player")
+};
 
-function clearTimers() {
-  timers.forEach((t) => clearTimeout(t));
-  timers = [];
-}
+/* -----------------------------
+   Utility Functions
+----------------------------- */
 
-function showLine(index) {
-  lyricLines.forEach((line, i) => {
-    line.classList.toggle("active", i === index);
-  });
-}
+// delay helper (clean async timing)
+const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-function showNextButton() {
-  nextBtn.classList.add("show");
-}
+// show animation
+const reveal = (el) => {
+  if (el) el.classList.add("show");
+};
 
-function playSequence() {
-  clearTimers();
-  showLine(0);
+// switch screens smoothly
+const switchScreen = (from, to) => {
+  from.classList.remove("active");
+  to.classList.add("active");
+};
 
-  const times = lyricLines.map((line) => Number(line.dataset.time || 0));
+/* -----------------------------
+   Flow Controller (MAIN LOGIC)
+----------------------------- */
 
-  times.forEach((time, index) => {
-    const id = setTimeout(() => {
-      showLine(index);
-    }, time);
-    timers.push(id);
-  });
+const runExperience = async () => {
 
-  const finalId = setTimeout(() => {
-    lyricLines.forEach((line) => line.classList.remove("active"));
-    showNextButton();
-  }, 27000);
+  /* -------- Screen 1 -------- */
+  await wait(500);
+  reveal(elements.t1);
 
-  timers.push(finalId);
-}
+  await wait(1000);
+  reveal(elements.t2);
 
-async function startExperience() {
-  startOverlay.style.display = "none";
+  await wait(2000);
 
-  try {
-    song.currentTime = 0;
-    await song.play();
-  } catch (err) {
-    // autoplay may be blocked until user gesture
+  /* -------- Screen 2 -------- */
+  switchScreen(screens.s1, screens.s2);
+
+  await wait(500);
+  reveal(elements.t3);
+
+  // try autoplay (may fail due to browser rules)
+  if (elements.audio) {
+    elements.audio.volume = 0.7;
+    elements.audio.play().catch(() => {
+      console.log("Autoplay blocked (normal)");
+    });
   }
 
-  playSequence();
-}
+  // lyrics reveal (clean loop)
+  for (let i = 0; i < elements.lyrics.length; i++) {
+    await wait(1200);
+    reveal(elements.lyrics[i]);
+  }
 
-startBtn.addEventListener("click", startExperience);
+  await wait(2000);
 
-nextBtn.addEventListener("click", () => {
-  if (window.location.href.includes("next.html")) return;
-  window.location.href = "next.html";
+  /* -------- Screen 3 -------- */
+  switchScreen(screens.s2, screens.s3);
+
+  await wait(600);
+  reveal(elements.finalText);
+};
+
+/* -----------------------------
+   Button Action
+----------------------------- */
+
+elements.btn.addEventListener("click", () => {
+  window.location.href = "https://wa.me/916394400744";
 });
 
-song.addEventListener("ended", () => {
-  lyricLines.forEach((line) => line.classList.remove("active"));
-  showNextButton();
-});
+/* -----------------------------
+   Start Experience
+----------------------------- */
 
 window.addEventListener("load", () => {
-  // Keep overlay until user taps, because mobile browsers usually block autoplay.
-  showLine(0);
+  runExperience();
 });
