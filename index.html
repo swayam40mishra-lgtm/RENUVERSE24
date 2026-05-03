@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <title>For You</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-<div class="overlay"></div>
 
 <!-- Screen 1 -->
 <section id="screen1" class="screen active">
@@ -22,10 +22,12 @@
 <!-- Screen 2 -->
 <section id="screen2" class="screen">
   <div class="card">
+    
     <p class="fade sub" id="t3">
       Just listen closely… these lyrics say everything I couldn’t.
     </p>
 
+    <!-- Lyrics -->
     <div class="lyrics">
       <p class="lyric" id="l1">Mahi mainu chadyoo na</p>
       <p class="lyric" id="l2">Ki tere bin dil naiyo lagna</p>
@@ -33,9 +35,15 @@
       <p class="lyric" id="l4">Mahi main tere piche piche chalna</p>
     </div>
 
-    <audio controls class="audio">
+    <!-- AUDIO (FIXED) -->
+    <audio id="player" class="audio" preload="auto" playsinline>
+      <!-- OPTION 1: Local file -->
       <source src="ve-mahi.mp3" type="audio/mpeg">
+
+      <!-- OPTION 2: Catbox link (uncomment if using link) -->
+      <!-- <source src="https://files.catbox.moe/xxxxx.mp3" type="audio/mpeg"> -->
     </audio>
+
   </div>
 </section>
 
@@ -43,6 +51,7 @@
 <section id="screen3" class="screen">
   <div class="card final">
     <button id="btn">Unblock Me</button>
+
     <p class="fade sub" id="finalText">
       If you ever feel like it… you can unblock me.<br>
       And maybe drop a message.
@@ -50,6 +59,8 @@
   </div>
 </section>
 
+<!-- JS -->
 <script src="script.js"></script>
+
 </body>
 </html>
