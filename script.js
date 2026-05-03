@@ -25,30 +25,26 @@ const el = {
 // ==========================
 // UTILITIES
 // ==========================
-
-// delay
 const wait = (ms) => new Promise(r => setTimeout(r, ms));
 
-// show element
 const show = (e) => e && e.classList.add("show");
 
-// hide (for future control if needed)
-const hide = (e) => e && e.classList.remove("show");
-
-// switch screens
 const switchScreen = async (from, to) => {
   from.classList.remove("active");
-  await wait(400); // small fade gap
+  await wait(400);
   to.classList.add("active");
 };
 
-// user skip control
+// ==========================
+// SMART WAIT (skip support)
+// ==========================
 let skip = false;
+
 document.body.addEventListener("click", () => {
   skip = true;
+  startAudio(); // unlock audio on first tap
 });
 
-// smart wait (can skip)
 const smartWait = async (time) => {
   let step = 100;
   for (let t = 0; t < time; t += step) {
@@ -59,54 +55,82 @@ const smartWait = async (time) => {
 };
 
 // ==========================
-// MAIN FLOW (SCENE TIMELINE)
+// AUDIO CONTROL (IMPORTANT)
 // ==========================
+let audioStarted = false;
 
+const startAudio = async () => {
+  if (!el.audio || audioStarted) return;
+
+  try {
+    el.audio.volume = 0;
+    await el.audio.play();
+
+    // smooth fade-in
+    let vol = 0;
+    const fade = setInterval(() => {
+      if (vol >= 0.5) {
+        clearInterval(fade);
+      } else {
+        vol += 0.02;
+        el.audio.volume = vol;
+      }
+    }, 200);
+
+    audioStarted = true;
+
+  } catch {
+    // autoplay blocked (normal)
+  }
+};
+
+// ==========================
+// MAIN FLOW (CINEMATIC)
+// ==========================
 const run = async () => {
 
-  // 🎬 SCENE 1 — ENTRY SILENCE
-  await smartWait(2000); // pause before anything
+  // 🎬 SCENE 1
+  await smartWait(2000);
 
-  show(el.t1); // "Received parcel?"
-  await smartWait(3500); // let it sit
+  show(el.t1);
+  await smartWait(3500);
 
-  show(el.t2); // "Hope you are doing well"
-  await smartWait(5000); // emotional gap
+  show(el.t2);
+  await smartWait(5000);
 
   // 🎬 TRANSITION
   await switchScreen(screens.s1, screens.s2);
 
-  // 🎬 SCENE 2 — MESSAGE
+  // 🎬 SCENE 2
   await smartWait(2500);
   show(el.t3);
 
-  // 🎵 audio start softly
-  if (el.audio) {
-    el.audio.volume = 0.4;
-    el.audio.play().catch(() => {});
-  }
+  // 🎵 start audio at correct moment
+  await smartWait(3000);
+  await startAudio();
 
-  await smartWait(4000);
-
-  // 🎬 LYRICS (very slow, breathing space)
+  // 🎬 LYRICS (slow)
   for (let line of el.lyrics) {
     show(line);
-    await smartWait(4200); // 👈 very slow (this is key)
+    await smartWait(4200);
   }
 
   await smartWait(6000);
 
-  // 🎬 FINAL TRANSITION
+  // 🎬 FINAL SCREEN
   await switchScreen(screens.s2, screens.s3);
 
+  // optional: pause music for emotional ending
+  if (el.audio) {
+    el.audio.pause();
+  }
+
   await smartWait(3000);
-
   show(el.finalText);
-
 };
 
 // ==========================
-// BUTTON
+// BUTTON ACTION
 // ==========================
 el.btn.onclick = () => {
   window.location.href = "https://wa.me/916394400744";
