@@ -5,27 +5,36 @@
   <title>For You</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- Screen 1 (Landing) -->
+<!-- Screen 1 -->
 <section id="screen1" class="screen active">
   <div class="card">
-    <h1 class="fade" id="t1">Received parcel</h1>
+    <h1 class="fade" id="t1">Received your parcel?</h1>
     <p class="fade sub" id="t2">Hope you are doing well.</p>
+
+    <!-- subtle hint -->
+    <p class="sub fade" id="tapHint" style="margin-top:20px; font-size:14px; opacity:0.6;">
+      Tap anywhere to continue
+    </p>
   </div>
 </section>
 
-<!-- Screen 2 (Lyrics + Audio starts here) -->
+<!-- Screen 2 -->
 <section id="screen2" class="screen">
   <div class="card">
     
     <p class="fade sub" id="t3">
       Just listen closely… these lyrics say everything I couldn’t.
     </p>
+
+    <!-- 🎵 PLAY BUTTON -->
+    <button id="playBtn" style="margin-top:20px;">
+      ▶ Play Music
+    </button>
 
     <!-- Lyrics -->
     <div class="lyrics">
@@ -37,10 +46,8 @@
 
     <!-- AUDIO -->
     <audio id="player" preload="auto" playsinline>
-      <!-- Local file -->
       <source src="assets/audio/ve-mahi.mp3" type="audio/mpeg">
-
-      <!-- OR Catbox (use one only) -->
+      <!-- OR Catbox -->
       <!-- <source src="https://files.catbox.moe/xxxxx.mp3" type="audio/mpeg"> -->
     </audio>
 
@@ -59,7 +66,6 @@
   </div>
 </section>
 
-<!-- JS -->
 <script src="script.js"></script>
 
 </body>
