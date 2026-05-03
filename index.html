@@ -11,15 +11,15 @@
 
 <body>
 
-<!-- Screen 1 -->
+<!-- Screen 1 (Landing) -->
 <section id="screen1" class="screen active">
   <div class="card">
-    <h1 class="fade" id="t1">Received parcel?</h1>
+    <h1 class="fade" id="t1">Received parcel</h1>
     <p class="fade sub" id="t2">Hope you are doing well.</p>
   </div>
 </section>
 
-<!-- Screen 2 -->
+<!-- Screen 2 (Lyrics + Audio starts here) -->
 <section id="screen2" class="screen">
   <div class="card">
     
@@ -35,12 +35,12 @@
       <p class="lyric" id="l4">Mahi main tere piche piche chalna</p>
     </div>
 
-    <!-- AUDIO (FIXED) -->
-    <audio id="player" class="audio" preload="auto" playsinline>
-      <!-- OPTION 1: Local file -->
-      <source src="assets/audio/ve-mahi.mp3">
+    <!-- AUDIO -->
+    <audio id="player" preload="auto" playsinline>
+      <!-- Local file -->
+      <source src="assets/audio/ve-mahi.mp3" type="audio/mpeg">
 
-      <!-- OPTION 2: Catbox link (uncomment if using link) -->
+      <!-- OR Catbox (use one only) -->
       <!-- <source src="https://files.catbox.moe/xxxxx.mp3" type="audio/mpeg"> -->
     </audio>
 
@@ -50,7 +50,7 @@
 <!-- Screen 3 -->
 <section id="screen3" class="screen">
   <div class="card final">
-    <button id="btn">Unblock Me</button>
+    <button id="btn">Click here to Unblock Me</button>
 
     <p class="fade sub" id="finalText">
       If you ever feel like it… you can unblock me.<br>
