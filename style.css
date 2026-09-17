@@ -1,6 +1,5 @@
 /* =====================================================
-   PROJECT AURORA — CSS V2
-   Dark / Cinematic / Mobile First
+   PROJECT AURORA — STYLED CINEMATIC UI (mobile-first)
 ===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap');
@@ -10,25 +9,16 @@
     --bg2: #07111c;
     --card: rgba(9, 18, 29, 0.72);
     --card2: rgba(13, 27, 42, 0.58);
-
     --white: #edf6ff;
     --text: #c5d5e6;
     --muted: #71859b;
-
     --blue: #9bd2ff;
     --cyan: #76f5eb;
     --purple: #9e8cff;
-
     --border: rgba(157, 207, 247, 0.16);
     --border-bright: rgba(157, 207, 247, 0.38);
-
     --glow: rgba(93, 184, 255, 0.16);
 }
-
-
-/* =====================================================
-   RESET
-===================================================== */
 
 * {
     margin: 0;
@@ -43,50 +33,24 @@ html {
 body {
     min-height: 100vh;
     background:
-        radial-gradient(
-            ellipse at 50% -10%,
-            rgba(49, 104, 146, 0.30),
-            transparent 48%
-        ),
-        radial-gradient(
-            ellipse at 100% 70%,
-            rgba(53, 92, 150, 0.10),
-            transparent 40%
-        ),
-        #03070c;
-
+        radial-gradient(ellipse at 50% -10%, rgba(49, 104, 146, 0.30), transparent 48%),
+        radial-gradient(ellipse at 100% 70%, rgba(53, 92, 150, 0.10), transparent 40%),
+        var(--bg);
     color: var(--white);
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
 }
-
-button {
-    font: inherit;
-}
-
-
-/* =====================================================
-   ATMOSPHERE
-===================================================== */
 
 body::before {
     content: "";
     position: fixed;
     inset: 0;
     z-index: -3;
-
     background-image:
         radial-gradient(circle, rgba(255,255,255,.65) 1px, transparent 1px),
         radial-gradient(circle, rgba(120,190,255,.40) 1px, transparent 1px);
-
-    background-size:
-        120px 120px,
-        190px 190px;
-
-    background-position:
-        15px 30px,
-        80px 90px;
-
+    background-size: 120px 120px, 190px 190px;
+    background-position: 15px 30px, 80px 90px;
     opacity: .18;
 }
 
@@ -96,30 +60,19 @@ body::after {
     inset: 0;
     z-index: -2;
     pointer-events: none;
-
     background:
-        linear-gradient(
-            120deg,
-            transparent 20%,
-            rgba(100, 205, 255, .025) 50%,
-            transparent 80%
-        );
+        linear-gradient(120deg, transparent 20%, rgba(100, 205, 255, .025) 50%, transparent 80%);
 }
 
-
-/* =====================================================
-   HEADER
-===================================================== */
+/* HEADER */
 
 .top-header {
     width: min(1100px, 100%);
     margin: auto;
-
     padding: 22px 22px 16px;
-
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
 .identity {
@@ -131,28 +84,15 @@ body::after {
 .avatar {
     width: 46px;
     height: 46px;
-
     display: grid;
     place-items: center;
-
     border-radius: 50%;
     border: 1px solid rgba(155,210,255,.55);
-
-    background:
-        radial-gradient(
-            circle at 40% 35%,
-            rgba(125,215,255,.22),
-            rgba(3,10,17,.9)
-        );
-
+    background: radial-gradient(circle at 40% 35%, rgba(125,215,255,.22), rgba(3,10,17,.9));
     color: var(--blue);
-
     font-family: 'Cormorant Garamond', serif;
     font-size: 23px;
-
-    box-shadow:
-        0 0 22px rgba(91,184,255,.16),
-        inset 0 0 18px rgba(91,184,255,.08);
+    box-shadow: 0 0 22px rgba(91,184,255,.16), inset 0 0 18px rgba(91,184,255,.08);
 }
 
 .project-name {
@@ -163,7 +103,6 @@ body::after {
 
 .member-status {
     margin-top: 5px;
-
     color: var(--muted);
     font-size: 7px;
     letter-spacing: 2.5px;
@@ -172,19 +111,14 @@ body::after {
 .menu-btn {
     width: 42px;
     height: 42px;
-
     display: grid;
     place-items: center;
-
     border: 1px solid var(--border);
     border-radius: 50%;
-
     background: rgba(8,17,28,.6);
     color: var(--white);
-
     font-size: 20px;
     cursor: pointer;
-
     transition: .25s;
 }
 
@@ -193,22 +127,15 @@ body::after {
     box-shadow: 0 0 20px var(--glow);
 }
 
-
-/* =====================================================
-   MAIN
-===================================================== */
+/* MAIN */
 
 main {
     width: min(1100px, 100%);
     margin: auto;
-
-    padding: 5px 18px 110px;
+    padding: 5px 18px 130px;
 }
 
-
-/* =====================================================
-   PAGE SYSTEM
-===================================================== */
+/* PAGE SYSTEM */
 
 .page {
     display: none;
@@ -231,58 +158,31 @@ main {
     }
 }
 
-
-/* =====================================================
-   HERO
-===================================================== */
+/* HERO */
 
 .hero {
     min-height: 590px;
-
     position: relative;
     overflow: hidden;
-
     padding: 62px 28px 40px;
-
     border: 1px solid var(--border);
     border-radius: 18px;
-
     background:
-        linear-gradient(
-            180deg,
-            rgba(4,12,20,.38),
-            rgba(2,7,13,.96)
-        ),
-        radial-gradient(
-            ellipse at 70% 20%,
-            rgba(78,178,239,.23),
-            transparent 45%
-        ),
-        radial-gradient(
-            ellipse at 35% 100%,
-            rgba(76,77,160,.15),
-            transparent 50%
-        );
-
+        linear-gradient(180deg, rgba(4,12,20,.38), rgba(2,7,13,.96)),
+        radial-gradient(ellipse at 70% 20%, rgba(78,178,239,.23), transparent 45%),
+        radial-gradient(ellipse at 35% 100%, rgba(76,77,160,.15), transparent 50%);
     box-shadow:
         inset 0 1px rgba(255,255,255,.035),
         0 20px 60px rgba(0,0,0,.28);
 }
 
-
-/* Aurora glow */
-
 .hero::before {
     content: "";
-
     position: absolute;
-
     width: 150%;
     height: 230px;
-
     left: -25%;
     bottom: 90px;
-
     background:
         linear-gradient(
             115deg,
@@ -292,55 +192,18 @@ main {
             rgba(153,111,255,.08) 68%,
             transparent 80%
         );
-
     filter: blur(24px);
-
     transform: rotate(-7deg);
-
     pointer-events: none;
 }
 
-
-/* Mountain silhouette */
-
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    left: -5%;
-    right: -5%;
-    bottom: -1px;
-
-    height: 190px;
-
-    background:
-        linear-gradient(
-            145deg,
-            transparent 0 35%,
-            rgba(1,5,9,.95) 36% 42%,
-            transparent 43%
-        ),
-        linear-gradient(
-            35deg,
-            transparent 0 50%,
-            rgba(1,5,9,.98) 51% 58%,
-            transparent 59%
-        );
-
-    opacity: .9;
-
-    pointer-events: none;
-}
+/* Removed unwanted X-shape mountain overlay */
 
 .eyebrow {
     position: relative;
     z-index: 2;
-
     margin-bottom: 18px;
-
     color: var(--blue);
-
     font-size: 8px;
     font-weight: 500;
     letter-spacing: 3.5px;
@@ -349,196 +212,130 @@ main {
 .hero h1 {
     position: relative;
     z-index: 2;
-
     max-width: 600px;
-
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(43px, 12vw, 86px);
     font-weight: 400;
-
     line-height: .92;
     letter-spacing: 1px;
 }
 
 .hero h1 i {
     color: var(--blue);
-    font-style: normal;
-
-    text-shadow:
-        0 0 30px rgba(125,203,255,.25);
+    text-shadow: 0 0 30px rgba(125,203,255,.25);
 }
 
 .hero p {
     position: relative;
     z-index: 2;
-
     max-width: 430px;
-
     margin-top: 27px;
-
     color: var(--text);
-
     font-size: 11px;
     line-height: 1.9;
 }
 
-
-/* =====================================================
-   BUTTON
-===================================================== */
+/* BUTTONS */
 
 .explore-btn {
     position: relative;
     z-index: 5;
-
     margin-top: 30px;
-
     padding: 13px 18px;
-
     border: 1px solid var(--border-bright);
     border-radius: 5px;
-
     background: rgba(8,19,31,.72);
-
     color: var(--white);
-
     font-size: 8px;
     font-weight: 500;
     letter-spacing: 2.5px;
-
     cursor: pointer;
-
     transition: .3s;
 }
 
 .explore-btn span {
     margin-left: 25px;
-
     color: var(--blue);
-
     font-size: 16px;
 }
 
 .explore-btn:hover {
     background: rgba(87,174,236,.10);
-
-    box-shadow:
-        0 0 30px rgba(100,190,255,.14);
-
+    box-shadow: 0 0 30px rgba(100,190,255,.14);
     transform: translateY(-2px);
 }
 
-
-/* =====================================================
-   STATUS
-===================================================== */
+/* SYSTEM STATUS */
 
 .system-status {
     position: relative;
     z-index: 10;
-
     width: 205px;
-
     margin: -35px 14px 35px auto;
-
     padding: 15px 17px;
-
     border: 1px solid var(--border);
     border-radius: 8px;
-
     background: rgba(4,12,21,.88);
-
     backdrop-filter: blur(15px);
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.30);
+    box-shadow: 0 12px 35px rgba(0,0,0,.30);
 }
 
 .system-status div {
     color: var(--muted);
-
     font-size: 7px;
     letter-spacing: 2.5px;
 }
 
 .status-dot {
     display: inline-block;
-
     width: 6px;
     height: 6px;
-
     margin-right: 7px;
-
     border-radius: 50%;
-
     background: var(--cyan);
-
-    box-shadow:
-        0 0 12px var(--cyan);
+    box-shadow: 0 0 12px var(--cyan);
 }
 
 .system-status strong {
     display: block;
-
     margin-top: 7px;
-
     color: var(--cyan);
-
     font-size: 9px;
     letter-spacing: 2px;
 }
 
-
-/* =====================================================
-   SECTION HEADING
-===================================================== */
+/* SECTION TITLE */
 
 .section-heading {
     margin: 38px 3px 15px;
-
     color: var(--muted);
-
     font-size: 8px;
     letter-spacing: 3px;
 }
 
-
-/* =====================================================
-   PORTALS
-===================================================== */
+/* PORTAL CARDS */
 
 .portal-grid {
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 10px;
 }
 
 .portal {
     position: relative;
     overflow: hidden;
-
-    min-height: 175px;
-
+    min-height: 150px;
     padding: 20px;
-
     border: 1px solid var(--border);
     border-radius: 11px;
-
     background:
         linear-gradient(
             145deg,
             rgba(17,35,52,.68),
             rgba(5,13,22,.82)
         );
-
     color: var(--white);
-
-    text-align: left;
-
     cursor: pointer;
-
     transition:
         transform .3s,
         border-color .3s,
@@ -547,27 +344,19 @@ main {
 
 .portal::before {
     content: "";
-
     position: absolute;
-
     width: 170px;
     height: 170px;
-
     right: -70px;
     top: -80px;
-
     border-radius: 50%;
-
     background: rgba(92,183,255,.10);
-
     filter: blur(15px);
 }
 
 .portal:hover {
     transform: translateY(-4px);
-
     border-color: var(--border-bright);
-
     box-shadow:
         0 15px 40px rgba(0,0,0,.25),
         0 0 30px rgba(89,175,235,.08);
@@ -575,9 +364,7 @@ main {
 
 .portal-wide {
     grid-column: span 2;
-
-    min-height: 235px;
-
+    min-height: 210px;
     background:
         linear-gradient(
             135deg,
@@ -588,126 +375,86 @@ main {
 
 .portal-number {
     position: absolute;
-
     top: 18px;
     left: 20px;
-
     color: rgba(155,210,255,.45);
-
     font-size: 8px;
     letter-spacing: 2px;
 }
 
 .portal-content {
     position: absolute;
-
     left: 20px;
     bottom: 19px;
 }
 
 .portal h2 {
     font-family: 'Cormorant Garamond', serif;
-
     font-size: 25px;
     font-weight: 500;
-
     line-height: 1;
-
     letter-spacing: 1.5px;
 }
 
 .portal p {
     margin-top: 8px;
-
     color: var(--muted);
-
     font-size: 7px;
     letter-spacing: 2px;
 }
 
 .arrow {
     position: absolute;
-
     right: 18px;
     bottom: 18px;
-
     color: var(--blue);
-
     font-size: 19px;
 }
 
 .notification-badge {
     position: absolute;
-
     top: 15px;
     right: 15px;
-
     min-width: 24px;
-
     padding: 5px 7px;
-
     border-radius: 20px;
-
     background: rgba(255,94,123,.14);
     border: 1px solid rgba(255,105,130,.3);
-
     color: #ff8da2;
-
     font-size: 7px;
-
     text-align: center;
 }
 
-
-/* =====================================================
-   QUOTE
-===================================================== */
+/* QUOTE */
 
 .quote {
     padding: 75px 15px 30px;
-
     text-align: center;
-
     color: var(--muted);
-
     font-family: 'Cormorant Garamond', serif;
-
     font-size: 18px;
     line-height: 1.5;
-
     letter-spacing: .5px;
 }
 
 .quote span {
     display: block;
-
     margin-bottom: 5px;
-
     color: var(--blue);
-
     font-size: 32px;
 }
 
-
-/* =====================================================
-   INNER PAGES
-===================================================== */
+/* INNER PAGES */
 
 .back-btn {
     margin: 10px 0 28px;
-
     padding: 9px 14px;
-
     border: 1px solid var(--border);
     border-radius: 20px;
-
     background: rgba(7,16,27,.6);
-
     color: var(--muted);
-
     font-size: 7px;
     letter-spacing: 2px;
-
     cursor: pointer;
 }
 
@@ -724,32 +471,22 @@ main {
 .portal-detail h1,
 .character-page h1 {
     font-family: 'Cormorant Garamond', serif;
-
     font-weight: 400;
-
     font-size: clamp(45px, 12vw, 90px);
-
     line-height: .9;
-
     letter-spacing: 1px;
 }
 
 .page-title p,
 .portal-detail > p {
     max-width: 520px;
-
     margin-top: 18px;
-
     color: var(--muted);
-
     font-size: 11px;
     line-height: 1.8;
 }
 
-
-/* =====================================================
-   NOTIFICATIONS
-===================================================== */
+/* NOTIFICATIONS */
 
 #notification-list {
     display: flex;
@@ -759,19 +496,13 @@ main {
 
 .notification {
     display: grid;
-
     grid-template-columns: 58px 1fr;
-
     gap: 14px;
-
     padding: 18px;
-
     border: 1px solid var(--border);
     border-radius: 10px;
-
     background: var(--card);
-
-    transition: .25s;
+    transition: border-color .25s;
 }
 
 .notification:hover {
@@ -780,72 +511,53 @@ main {
 
 .notification-time {
     color: var(--blue);
-
     font-size: 9px;
     letter-spacing: 1px;
 }
 
 .notification-type {
     color: var(--cyan);
-
     font-size: 7px;
     letter-spacing: 2px;
 }
 
 .notification h3 {
     margin-top: 7px;
-
     font-family: 'Cormorant Garamond', serif;
-
     font-size: 20px;
     font-weight: 500;
 }
 
 .notification p {
     margin-top: 5px;
-
     color: var(--muted);
-
     font-size: 10px;
     line-height: 1.6;
 }
 
-
-/* =====================================================
-   KAIROS
-===================================================== */
+/* KAIROS */
 
 .character-page {
     min-height: 650px;
-
     padding: 30px 4px;
 }
 
 .character-page h1 {
     font-size: clamp(70px, 20vw, 150px);
-
     color: #dcecff;
-
-    text-shadow:
-        0 0 45px rgba(127,190,255,.15);
+    text-shadow: 0 0 45px rgba(127,190,255,.15);
 }
 
 .symbol {
     width: 115px;
     height: 115px;
-
     margin: 55px 0 40px;
-
     display: grid;
     place-items: center;
-
     border: 1px solid var(--border-bright);
     border-radius: 50%;
-
     color: var(--blue);
-
     font-size: 42px;
-
     box-shadow:
         0 0 40px rgba(95,185,255,.10),
         inset 0 0 30px rgba(95,185,255,.07);
@@ -853,24 +565,16 @@ main {
 
 blockquote {
     max-width: 600px;
-
     color: var(--text);
-
     font-family: 'Cormorant Garamond', serif;
-
     font-size: 22px;
-
     line-height: 1.5;
 }
 
-
-/* =====================================================
-   PORTAL DETAIL
-===================================================== */
+/* PORTAL DETAILS */
 
 .portal-detail {
     min-height: 650px;
-
     padding: 25px 4px;
 }
 
@@ -878,74 +582,53 @@ blockquote {
     max-width: 800px;
 }
 
-
-/* =====================================================
-   PUBLICATIONS
-===================================================== */
+/* PUBLICATIONS */
 
 .publication-card,
 .info-card {
     margin-top: 12px;
-
     padding: 22px;
-
     border: 1px solid var(--border);
     border-radius: 10px;
-
     background: var(--card);
 }
 
 .publication-card span {
     color: var(--blue);
-
     font-size: 7px;
     letter-spacing: 2px;
 }
 
 .publication-card h2 {
     margin-top: 11px;
-
     font-family: 'Cormorant Garamond', serif;
-
     font-size: 23px;
     font-weight: 500;
 }
 
 .publication-card p {
     margin-top: 5px;
-
     color: var(--muted);
-
     font-size: 10px;
 }
 
-
-/* =====================================================
-   ARTIFACTS
-===================================================== */
+/* ARTIFACTS */
 
 .artifact-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 10px;
-
     margin-top: 30px;
 }
 
 .artifact {
     height: 210px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     padding: 16px;
-
     border: 1px solid var(--border);
     border-radius: 10px;
-
     background:
         radial-gradient(
             circle at 50% 45%,
@@ -957,91 +640,63 @@ blockquote {
 
 .artifact-symbol {
     margin-top: 30px;
-
     text-align: center;
-
     color: var(--blue);
-
     font-size: 58px;
-
-    text-shadow:
-        0 0 25px rgba(120,200,255,.35);
+    text-shadow: 0 0 25px rgba(120,200,255,.35);
 }
 
 .artifact span {
     color: var(--muted);
-
     font-size: 7px;
     letter-spacing: 2px;
 }
 
-
-/* =====================================================
-   TIMELINE
-===================================================== */
+/* TIMELINE */
 
 .timeline {
     position: relative;
-
     margin: 20px 0;
-
     padding-left: 25px;
 }
 
 .timeline::before {
     content: "";
-
     position: absolute;
-
     left: 5px;
     top: 5px;
     bottom: 5px;
-
     width: 1px;
-
-    background: linear-gradient(
-        var(--blue),
-        var(--border),
-        transparent
-    );
+    background:
+        linear-gradient(
+            var(--blue),
+            var(--border),
+            transparent
+        );
 }
 
 .timeline-item {
     position: relative;
-
     display: flex;
-
     gap: 18px;
-
     margin-bottom: 12px;
-
     padding: 20px;
-
     border: 1px solid var(--border);
     border-radius: 10px;
-
     background: var(--card);
-
-    transition: .25s;
+    transition: border-color .25s;
 }
 
 .timeline-item::before {
     content: "";
-
     position: absolute;
-
     left: -25px;
     top: 27px;
-
     width: 9px;
     height: 9px;
-
     border-radius: 50%;
-
     background: var(--blue);
-
-    box-shadow:
-        0 0 14px rgba(120,205,255,.6);
+    box-shadow: 0 0 14px rgba(120,205,255,.6);
 }
 
 .timeline-item.locked {
@@ -1050,110 +705,79 @@ blockquote {
 
 .timeline-item.locked::before {
     background: #536274;
-
     box-shadow: none;
 }
 
 .timeline-number {
     color: var(--blue);
-
     font-family: 'Cormorant Garamond', serif;
-
     font-size: 27px;
 }
 
 .timeline-item small {
     color: var(--muted);
-
     font-size: 7px;
     letter-spacing: 2px;
 }
 
 .timeline-item h2 {
     margin-top: 5px;
-
     font-family: 'Cormorant Garamond', serif;
-
     font-size: 20px;
     font-weight: 500;
 }
 
 .timeline-item p {
     margin-top: 4px;
-
     color: var(--muted);
-
     font-size: 8px;
 }
 
-
-/* =====================================================
-   PROFILE
-===================================================== */
+/* PROFILE */
 
 .info-card > p {
     margin-top: 17px;
-
     color: var(--muted);
-
     font-size: 11px;
     line-height: 1.9;
 }
 
 .system-list {
     display: grid;
-
     grid-template-columns: repeat(5, 1fr);
-
     gap: 8px;
-
     margin: 12px 0;
 }
 
 .system-list div {
     min-height: 115px;
-
     padding: 17px 11px;
-
     border: 1px solid var(--border);
     border-radius: 8px;
-
     background: var(--card2);
 }
 
 .system-list span {
     display: block;
-
     color: var(--blue);
-
     font-family: 'Cormorant Garamond', serif;
-
     font-size: 17px;
 }
 
 .system-list small {
     display: block;
-
     margin-top: 8px;
-
     color: var(--muted);
-
     font-size: 6px;
-
     line-height: 1.5;
 }
 
 .status-row {
     display: flex;
-
     justify-content: space-between;
-
     gap: 15px;
-
     padding: 13px 0;
-
     border-bottom: 1px solid rgba(150,200,240,.08);
-
     font-size: 8px;
     letter-spacing: 1px;
 }
@@ -1166,64 +790,39 @@ blockquote {
     color: var(--cyan);
 }
 
-
-/* =====================================================
-   BOTTOM NAVIGATION
-===================================================== */
+/* BOTTOM NAVIGATION */
 
 .bottom-nav {
     position: fixed;
-
     z-index: 50;
-
     left: 50%;
     bottom: 10px;
-
     transform: translateX(-50%);
-
     width: calc(100% - 20px);
     max-width: 570px;
-
     height: 65px;
-
     display: flex;
-
     justify-content: space-around;
     align-items: center;
-
     border: 1px solid var(--border);
-
     border-radius: 18px;
-
-    background:
-        rgba(3,10,17,.91);
-
+    background: rgba(3,10,17,.91);
     backdrop-filter: blur(18px);
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.45);
+    box-shadow: 0 15px 40px rgba(0,0,0,.45);
 }
 
 .nav-item {
     width: 25%;
     height: 100%;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     gap: 4px;
-
-    border: 0;
-
     background: transparent;
-
     color: var(--muted);
-
     cursor: pointer;
-
-    transition: .25s;
+    transition: color .25s;
 }
 
 .nav-item span {
@@ -1237,29 +836,20 @@ blockquote {
 
 .nav-item.active-nav {
     color: var(--white);
-
-    text-shadow:
-        0 0 14px rgba(130,205,255,.65);
+    text-shadow: 0 0 14px rgba(130,205,255,.65);
 }
 
 .nav-item.active-nav span {
     color: var(--blue);
 }
 
-
-* =====================================================
-   MENU
-===================================================== */
+/* MENU OVERLAY */
 
 .menu-overlay {
     position: fixed;
-
     inset: 0;
-
     z-index: 100;
-
     padding: 25px;
-
     background:
         radial-gradient(
             ellipse at 70% 20%,
@@ -1267,13 +857,9 @@ blockquote {
             transparent 45%
         ),
         rgba(2,6,11,.97);
-
     backdrop-filter: blur(20px);
-
     opacity: 0;
-
     pointer-events: none;
-
     transition: .35s;
 }
 
@@ -1284,86 +870,58 @@ blockquote {
 
 .close-menu {
     position: absolute;
-
     top: 22px;
     right: 22px;
-
     width: 42px;
     height: 42px;
-
     border: 1px solid var(--border);
     border-radius: 50%;
-
     background: transparent;
-
     color: white;
-
     font-size: 25px;
-
     cursor: pointer;
 }
 
 .menu-content {
     width: min(600px, 100%);
-
     margin: 100px auto;
-
     padding: 10px;
 }
 
 .menu-content h2 {
     margin-bottom: 35px;
-
     font-family: 'Cormorant Garamond', serif;
-
     font-size: clamp(36px, 10vw, 65px);
-
     font-weight: 400;
-
     line-height: .95;
 }
 
 .menu-content button:not(.close-menu) {
     display: block;
-
     width: 100%;
-
     padding: 16px 0;
-
     border: 0;
-
     border-bottom: 1px solid var(--border);
-
     background: transparent;
-
     color: var(--text);
-
     text-align: left;
-
     font-size: 9px;
     letter-spacing: 3px;
-
     cursor: pointer;
-
     transition: .2s;
 }
 
 .menu-content button:not(.close-menu):hover {
     color: var(--blue);
-
     padding-left: 8px;
 }
 
-
-/* =====================================================
-   TABLET / DESKTOP
-===================================================== */
+/* MEDIA QUERIES */
 
 @media (min-width: 701px) {
 
     main {
-        padding-left: 25px;
-        padding-right: 25px;
+        padding: 5px 25px 130px;
     }
 
     .hero {
@@ -1380,11 +938,11 @@ blockquote {
     }
 
     .portal {
-        min-height: 210px;
+        min-height: 180px;
     }
 
     .portal-wide {
-        min-height: 280px;
+        min-height: 240px;
     }
 
     .bottom-nav {
@@ -1392,18 +950,11 @@ blockquote {
     }
 }
 
-
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
-
 @media (max-width: 430px) {
 
     .hero {
         min-height: 570px;
-
         padding: 55px 22px 35px;
-
         border-radius: 15px;
     }
 
@@ -1422,12 +973,11 @@ blockquote {
     .portal,
     .portal-wide {
         grid-column: span 1;
-
-        min-height: 175px;
+        min-height: 150px;
     }
 
     .portal-wide {
-        min-height: 220px;
+        min-height: 200px;
     }
 
     .portal h2 {
@@ -1471,16 +1021,10 @@ blockquote {
     }
 }
 
-
-/* =====================================================
-   VERY SMALL PHONES
-===================================================== */
-
 @media (max-width: 350px) {
 
     main {
-        padding-left: 11px;
-        padding-right: 11px;
+        padding: 11px;
     }
 
     .hero h1 {
@@ -1498,5 +1042,4 @@ blockquote {
     .nav-item small {
         font-size: 5px;
     }
-}
- 
+           }
