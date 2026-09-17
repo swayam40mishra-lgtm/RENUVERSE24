@@ -1,142 +1,167 @@
-// ==========================
-// ELEMENTS
-// ==========================
-const screens = {
-  s1: document.getElementById("screen1"),
-  s2: document.getElementById("screen2"),
-  s3: document.getElementById("screen3")
-};
+// ========================================
+// PROJECT AURORA — MAIN JAVASCRIPT
+// ========================================
 
-const el = {
-  t1: document.getElementById("t1"),
-  t2: document.getElementById("t2"),
-  t3: document.getElementById("t3"),
-  finalText: document.getElementById("finalText"),
-  lyrics: [
-    document.getElementById("l1"),
-    document.getElementById("l2"),
-    document.getElementById("l3"),
-    document.getElementById("l4")
-  ],
-  btn: document.getElementById("btn"),
-  audio: document.getElementById("player")
-};
+const pages = document.querySelectorAll(".page");
+const navItems = document.querySelectorAll(".nav-item");
+const menu = document.getElementById("menu");
 
-// ==========================
-// UTILITIES
-// ==========================
-const wait = (ms) => new Promise(r => setTimeout(r, ms));
 
-const show = (e) => e && e.classList.add("show");
+// ========================================
+// PAGE NAVIGATION
+// ========================================
 
-const switchScreen = async (from, to) => {
-  from.classList.remove("active");
-  await wait(400);
-  to.classList.add("active");
-};
+function navigate(pageName) {
 
-// ==========================
-// SMART WAIT (skip support)
-// ==========================
-let skip = false;
+  pages.forEach(page => {
+    page.classList.remove("active");
+  });
 
-document.body.addEventListener("click", () => {
-  skip = true;
-  startAudio(); // unlock audio on first tap
+  const targetPage = document.getElementById(pageName);
+
+  if (targetPage) {
+    targetPage.classList.add("active");
+  }
+
+  // Update bottom navigation
+  navItems.forEach(item => {
+    item.classList.remove("active-nav");
+  });
+
+  const activeNav = document.querySelector(
+    `.nav-item[onclick="navigate('${pageName}')"]`
+  );
+
+  if (activeNav) {
+    activeNav.classList.add("active-nav");
+  }
+
+  // Start page from top
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+
+// ========================================
+// MENU
+// ========================================
+
+function openMenu() {
+  menu.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeMenu() {
+  menu.classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+
+// ========================================
+// CLOSE MENU WHEN CLICKING OUTSIDE
+// ========================================
+
+menu.addEventListener("click", function(event) {
+
+  if (event.target === menu) {
+    closeMenu();
+  }
+
 });
 
-const smartWait = async (time) => {
-  let step = 100;
-  for (let t = 0; t < time; t += step) {
-    if (skip) break;
-    await wait(step);
-  }
-  skip = false;
-};
 
-// ==========================
-// AUDIO CONTROL (IMPORTANT)
-// ==========================
-let audioStarted = false;
+// ========================================
+// KEYBOARD ESCAPE
+// ========================================
 
-const startAudio = async () => {
-  if (!el.audio || audioStarted) return;
+document.addEventListener("keydown", function(event) {
 
-  try {
-    el.audio.volume = 0;
-    await el.audio.play();
-
-    // smooth fade-in
-    let vol = 0;
-    const fade = setInterval(() => {
-      if (vol >= 0.5) {
-        clearInterval(fade);
-      } else {
-        vol += 0.02;
-        el.audio.volume = vol;
-      }
-    }, 200);
-
-    audioStarted = true;
-
-  } catch {
-    // autoplay blocked (normal)
-  }
-};
-
-// ==========================
-// MAIN FLOW (CINEMATIC)
-// ==========================
-const run = async () => {
-
-  // 🎬 SCENE 1
-  await smartWait(2000);
-
-  show(el.t1);
-  await smartWait(3500);
-
-  show(el.t2);
-  await smartWait(5000);
-
-  // 🎬 TRANSITION
-  await switchScreen(screens.s1, screens.s2);
-
-  // 🎬 SCENE 2
-  await smartWait(2500);
-  show(el.t3);
-
-  // 🎵 start audio at correct moment
-  await smartWait(3000);
-  await startAudio();
-
-  // 🎬 LYRICS (slow)
-  for (let line of el.lyrics) {
-    show(line);
-    await smartWait(4200);
+  if (event.key === "Escape") {
+    closeMenu();
   }
 
-  await smartWait(6000);
+});
 
-  // 🎬 FINAL SCREEN
-  await switchScreen(screens.s2, screens.s3);
 
-  // optional: pause music for emotional ending
-  if (el.audio) {
-    el.audio.pause();
+// ========================================
+// NOTIFICATION DATA
+// ========================================
+
+const notifications = [
+
+  {
+    time: "09:45",
+    type: "SYSTEM",
+    title: "New transmission received",
+    message: "A new signal has entered the Aurora archive."
+  },
+
+  {
+    time: "08:12",
+    type: "KAIROS",
+    title: "Archive update",
+    message: "A new entry has been added to the system."
+  },
+
+  {
+    time: "YESTERDAY",
+    type: "ARCHIVE",
+    title: "Something was found",
+    message: "The archive has revealed another fragment."
   }
 
-  await smartWait(3000);
-  show(el.finalText);
+];
+
+
+// ========================================
+// FUTURE MANUAL NOTIFICATION SYSTEM
+// ========================================
+//
+// Later you can add notifications manually
+// to the array above.
+//
+// Example:
+//
+// {
+//   time: "21:30",
+//   type: "LAYRA",
+//   title: "Transmission detected",
+//   message: "Something has changed."
+// }
+//
+// No automatic dates.
+// No automatic unlocking.
+// Everything remains manually controlled.
+// ========================================
+
+
+// ========================================
+// MANUAL TIMELINE STATE
+// ========================================
+
+const timeline = {
+
+  1: true,
+
+  2: true,
+
+  3: false,
+
+  4: false,
+
+  5: false
+
 };
 
-// ==========================
-// BUTTON ACTION
-// ==========================
-el.btn.onclick = () => {
-  window.location.href = "https://wa.me/916394400744";
-};
 
-// ==========================
-// START
-// ==========================
-window.onload = run;
+// ========================================
+// SIMPLE PAGE LOAD
+// ========================================
+
+document.addEventListener("DOMContentLoaded", function() {
+
+  navigate("home");
+
+});
