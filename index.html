@@ -2,71 +2,312 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>For You</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050b12">
+  <title>PROJECT AURORA</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- Screen 1 -->
-<section id="screen1" class="screen active">
-  <div class="card">
-    <h1 class="fade" id="t1">Received your parcel?</h1>
-    <p class="fade sub" id="t2">Hope you are doing well.</p>
+  <div class="aurora-bg"></div>
 
-    <!-- subtle hint -->
-    <p class="sub fade" id="tapHint" style="margin-top:20px; font-size:14px; opacity:0.6;">
-      Tap anywhere to continue
-    </p>
-  </div>
-</section>
+  <!-- TOP HEADER -->
+  <header class="top-header">
+    <div class="identity">
+      <div class="avatar">S</div>
 
-<!-- Screen 2 -->
-<section id="screen2" class="screen">
-  <div class="card">
-    
-    <p class="fade sub" id="t3">
-      Just listen closely… these lyrics say everything I couldn’t.
-    </p>
-
-    <!-- 🎵 PLAY BUTTON -->
-    <button id="playBtn" style="margin-top:20px;">
-      ▶ Play Music
-    </button>
-
-    <!-- Lyrics -->
-    <div class="lyrics">
-      <p class="lyric" id="l1">Mahi mainu chadyoo na</p>
-      <p class="lyric" id="l2">Ki tere bin dil naiyo lagna</p>
-      <p class="lyric" id="l3">Jithe vi tu chalna ae</p>
-      <p class="lyric" id="l4">Mahi main tere piche piche chalna</p>
+      <div>
+        <div class="project-name">PROJECT AURORA</div>
+        <div class="member-status">OFFICIAL MEMBER</div>
+      </div>
     </div>
 
-    <!-- AUDIO -->
-    <audio id="player" preload="auto" playsinline>
-      <source src="assets/audio/ve-mahi.mp3" type="audio/mpeg">
-      <!-- OR Catbox -->
-      <!-- <source src="https://files.catbox.moe/xxxxx.mp3" type="audio/mpeg"> -->
-    </audio>
+    <button class="menu-btn" onclick="openMenu()">☰</button>
+  </header>
+
+
+  <!-- MAIN CONTENT -->
+  <main id="app">
+
+    <!-- HOME -->
+    <section class="page active" id="home">
+
+      <div class="hero">
+        <div class="eyebrow">PROJECT AURORA</div>
+
+        <h1>
+          The archive<br>
+          is <span>alive.</span>
+        </h1>
+
+        <p>
+          Welcome to the official Project Aurora archive.
+          Some things are meant to be discovered.
+        </p>
+      </div>
+
+
+      <div class="system-status">
+        <span class="status-dot"></span>
+        SYSTEM ONLINE
+        <span class="status-time">09:45</span>
+      </div>
+
+
+      <!-- PORTALS -->
+      <div class="section-title">DISCOVER</div>
+
+      <div class="portal-grid">
+
+        <button class="portal large" onclick="navigate('studios')">
+          <span class="portal-label">BLACK AURORA STUDIOS</span>
+          <span class="portal-arrow">↗</span>
+        </button>
+
+        <button class="portal" onclick="navigate('kairos')">
+          <span class="portal-label">KAIROS</span>
+          <span class="portal-arrow">↗</span>
+        </button>
+
+        <button class="portal" onclick="navigate('notifications')">
+          <span class="portal-label">NOTIFICATIONS</span>
+          <span class="notification-badge">03</span>
+          <span class="portal-arrow">↗</span>
+        </button>
+
+        <button class="portal" onclick="navigate('publications')">
+          <span class="portal-label">PUBLICATIONS</span>
+          <span class="portal-arrow">↗</span>
+        </button>
+
+        <button class="portal" onclick="navigate('artifacts')">
+          <span class="portal-label">ARTIFACTS</span>
+          <span class="portal-arrow">↗</span>
+        </button>
+
+        <button class="portal" onclick="navigate('timeline')">
+          <span class="portal-label">TIMELINE</span>
+          <span class="portal-arrow">↗</span>
+        </button>
+
+      </div>
+
+
+      <div class="closing-text">
+        <div>EVERYTHING IS CONNECTED.</div>
+        <strong>YOU JUST HAVE TO LOOK.</strong>
+      </div>
+
+    </section>
+
+
+    <!-- NOTIFICATIONS -->
+    <section class="page" id="notifications">
+
+      <button class="back-btn" onclick="navigate('home')">← BACK</button>
+
+      <div class="page-heading">
+        <div class="eyebrow">LIVE TRANSMISSIONS</div>
+        <h2>Notifications</h2>
+        <p>Incoming messages from the Aurora system.</p>
+      </div>
+
+      <div id="notification-list">
+
+        <article class="notification unread">
+          <div class="notification-time">09:45</div>
+          <div>
+            <div class="notification-type">SYSTEM</div>
+            <h3>New transmission received</h3>
+            <p>A new signal has entered the Aurora archive.</p>
+          </div>
+          <span>↗</span>
+        </article>
+
+        <article class="notification">
+          <div class="notification-time">08:12</div>
+          <div>
+            <div class="notification-type">KAIROS</div>
+            <h3>Archive update</h3>
+            <p>A new entry has been added to the system.</p>
+          </div>
+          <span>↗</span>
+        </article>
+
+        <article class="notification">
+          <div class="notification-time">YESTERDAY</div>
+          <div>
+            <div class="notification-type">ARCHIVE</div>
+            <h3>Something was found</h3>
+            <p>The archive has revealed another fragment.</p>
+          </div>
+          <span>↗</span>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- KAIROS -->
+    <section class="page" id="kairos">
+
+      <button class="back-btn" onclick="navigate('home')">← BACK</button>
+
+      <div class="portal-page">
+        <div class="eyebrow">SYSTEM A-17</div>
+        <h2>KAIROS</h2>
+        <p>
+          A moment exists between what was
+          and what is about to happen.
+        </p>
+
+        <div class="big-symbol">K</div>
+      </div>
+
+    </section>
+
+
+    <!-- STUDIOS -->
+    <section class="page" id="studios">
+
+      <button class="back-btn" onclick="navigate('home')">← BACK</button>
+
+      <div class="portal-page">
+        <div class="eyebrow">DIVISION 01</div>
+        <h2>BLACK AURORA<br>STUDIOS</h2>
+        <p>
+          Stories, visuals and transmissions
+          from the Aurora universe.
+        </p>
+      </div>
+
+    </section>
+
+
+    <!-- PUBLICATIONS -->
+    <section class="page" id="publications">
+
+      <button class="back-btn" onclick="navigate('home')">← BACK</button>
+
+      <div class="portal-page">
+        <div class="eyebrow">DIVISION 02</div>
+        <h2>BLACK AURORA<br>PUBLICATIONS</h2>
+        <p>
+          Documents from the archive.
+        </p>
+      </div>
+
+    </section>
+
+
+    <!-- ARTIFACTS -->
+    <section class="page" id="artifacts">
+
+      <button class="back-btn" onclick="navigate('home')">← BACK</button>
+
+      <div class="portal-page">
+        <div class="eyebrow">ARCHIVE</div>
+        <h2>ARTIFACTS</h2>
+        <p>
+          Objects, fragments and discoveries
+          preserved inside Project Aurora.
+        </p>
+      </div>
+
+    </section>
+
+
+    <!-- TIMELINE -->
+    <section class="page" id="timeline">
+
+      <button class="back-btn" onclick="navigate('home')">← BACK</button>
+
+      <div class="page-heading">
+        <div class="eyebrow">CHRONOLOGY</div>
+        <h2>Timeline</h2>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item unlocked">
+          <span>01</span>
+          <div>
+            <small>UNLOCKED</small>
+            <h3>ORIGIN</h3>
+          </div>
+        </div>
+
+        <div class="timeline-item unlocked">
+          <span>02</span>
+          <div>
+            <small>UNLOCKED</small>
+            <h3>THE AWAKENING</h3>
+          </div>
+        </div>
+
+        <div class="timeline-item locked">
+          <span>03</span>
+          <div>
+            <small>LOCKED</small>
+            <h3>CLASSIFIED</h3>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- BOTTOM NAVIGATION -->
+  <nav class="bottom-nav">
+
+    <button onclick="navigate('home')" class="nav-item active-nav">
+      <span>⌂</span>
+      <small>HOME</small>
+    </button>
+
+    <button onclick="navigate('notifications')" class="nav-item">
+      <span>◉</span>
+      <small>NOTIFICATIONS</small>
+    </button>
+
+    <button onclick="navigate('kairos')" class="nav-item">
+      <span>◇</span>
+      <small>KAIROS</small>
+    </button>
+
+    <button onclick="navigate('profile')" class="nav-item">
+      <span>○</span>
+      <small>PROFILE</small>
+    </button>
+
+  </nav>
+
+
+  <!-- MENU -->
+  <div class="menu-overlay" id="menu">
+
+    <button class="close-menu" onclick="closeMenu()">×</button>
+
+    <div class="menu-content">
+      <div class="eyebrow">PROJECT AURORA</div>
+
+      <button onclick="navigate('home'); closeMenu()">HOME</button>
+      <button onclick="navigate('notifications'); closeMenu()">NOTIFICATIONS</button>
+      <button onclick="navigate('kairos'); closeMenu()">KAIROS</button>
+      <button onclick="navigate('timeline'); closeMenu()">TIMELINE</button>
+      <button onclick="navigate('artifacts'); closeMenu()">ARTIFACTS</button>
+    </div>
 
   </div>
-</section>
 
-<!-- Screen 3 -->
-<section id="screen3" class="screen">
-  <div class="card final">
-    <button id="btn">Click here to Unblock Me</button>
 
-    <p class="fade sub" id="finalText">
-      If you ever feel like it… you can unblock me.<br>
-      And maybe drop a message.
-    </p>
-  </div>
-</section>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
