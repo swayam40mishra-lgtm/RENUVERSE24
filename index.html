@@ -2,3631 +2,865 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Project Aurora</title>
+    <meta name="theme-color" content="#02070c">
+    <meta name="description" content="Project Aurora — an archive of memories, stories and signals.">
 
-    <meta
-        name="description"
-        content="Project Aurora — A collection of signals, memories and things left behind."
-    >
+    <title>PROJECT AURORA</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
-        rel="stylesheet"
-    >
-
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="home.css">
 </head>
-
 
 <body>
 
-<!-- =========================================================
-     PROJECT AURORA
-     SINGLE PAGE APPLICATION STRUCTURE
+    <!-- =====================================================
+         AURORA APP
+    ====================================================== -->
 
-     All pages live inside this one HTML file.
-     JavaScript controls which page is visible.
-========================================================= -->
+    <div class="aurora-app">
 
 
-<!-- =========================================================
-     GLOBAL BACKGROUND
-========================================================= -->
+        <!-- =================================================
+             CINEMATIC BACKGROUND
+        ================================================== -->
 
-<div class="aurora-background"></div>
-<div class="stars"></div>
+        <div class="home-background">
 
+            <!--
+                Main cinematic image.
+                Add your image here:
+                assets/images/aurora-home.jpg
+            -->
 
-<!-- =========================================================
-     GLOBAL HEADER
-========================================================= -->
-
-<header class="site-header">
-
-    <div
-        class="member-trigger"
-        onclick="toggleProfileCard()"
-        role="button"
-        tabindex="0"
-        aria-label="Open member profile"
-    >
-
-        <div class="member-avatar">
             <img
-                src="assets/images/muskan.jpg"
-                alt="Member"
+                src="assets/images/aurora-home.jpg"
+                alt=""
+                class="home-background-image"
             >
-        </div>
 
-        <div class="member-heading">
-
-            <div class="brand-name">
-                PROJECT AURORA
-            </div>
-
-            <div class="member-label">
-                OFFICIAL MEMBER
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <button
-        class="menu-button"
-        onclick="openMenu()"
-        aria-label="Open navigation menu"
-    >
-
-        <span></span>
-        <span></span>
-        <span></span>
-
-    </button>
-
-</header>
-
-
-<!-- =========================================================
-     FLOATING MEMBER ID CARD
-========================================================= -->
-
-<div
-    id="profile-card"
-    class="profile-popup"
->
-
-    <button
-        class="popup-close"
-        onclick="toggleProfileCard()"
-        aria-label="Close profile"
-    >
-        ×
-    </button>
-
-
-    <div class="popup-avatar">
-
-        <img
-            src="assets/images/muskan.jpg"
-            alt="Muskan"
-        >
-
-    </div>
-
-
-    <h2>Muskan</h2>
-
-    <div class="popup-project">
-        PROJECT AURORA
-    </div>
-
-    <p class="popup-quote">
-        “Still learning,<br>
-        still becoming.”
-    </p>
-
-
-    <div class="popup-details">
-
-        <div>
-            <span>Member ID</span>
-            <strong>PA-0047</strong>
-        </div>
-
-        <div>
-            <span>Role</span>
-            <strong>Member</strong>
-        </div>
-
-        <div>
-            <span>Status</span>
-            <strong class="status-active">
-                <i></i>
-                Active
-            </strong>
-        </div>
-
-        <div>
-            <span>Joined</span>
-            <strong>19 Sep 2026</strong>
-        </div>
-
-    </div>
-
-
-    <button
-        class="outline-button"
-        onclick="navigate('profile'); toggleProfileCard();"
-    >
-        VIEW FULL PROFILE
-        <span>→</span>
-    </button>
-
-</div>
-
-
-
-<!-- =========================================================
-     MAIN APPLICATION
-========================================================= -->
-
-<main id="app">
-
-
-<!-- =========================================================
-     PAGE 01 — HOME
-========================================================= -->
-
-<section
-    id="home"
-    class="page active"
->
-
-    <!-- HERO -->
-
-    <div class="home-hero">
-
-        <div class="hero-content">
-
-            <div class="eyebrow">
-                PROJECT AURORA
-            </div>
-
-
-            <div class="hero-status">
-
-                <span>
-                    SYSTEM STATUS
-                </span>
-
-                <strong>
-                    <i></i>
-                    ACTIVE
-                </strong>
-
-            </div>
-
-
-            <div class="hero-date">
-                19 SEPTEMBER 2026
-                <span>·</span>
-                DAY 01
-            </div>
-
-
-            <h1 class="hero-title">
-
-                SOME THINGS ARE MADE
-                TO BE SEEN.
-
-                <br>
-
-                SOME ARE MADE TO BE
-                REMEMBERED.
-
-            </h1>
-
-
-            <p class="hero-description">
-
-                You have reached the beginning.
-
-                <br>
-
-                Everything you find here
-                was left for a reason.
-
-            </p>
+            <div class="home-image-overlay"></div>
+            <div class="home-vignette"></div>
 
         </div>
 
 
-        <div class="hero-scroll">
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
 
-            <span>SCROLL</span>
+        <header class="aurora-header">
 
-            <span class="scroll-arrow">
-                ↓
-            </span>
+            <!-- PROFILE / AVATAR -->
 
-        </div>
+            <a
+                href="profile.html"
+                class="aurora-identity"
+                aria-label="Open profile"
+            >
 
+                <div class="identity-avatar">
 
-        <div class="hero-bottom-line">
+                    <img
+                        src="assets/images/muskan.jpg"
+                        alt="Profile"
+                    >
 
-            <span>
-                A HIGHER ARCHIVE AWAITS
-            </span>
+                </div>
 
-        </div>
+                <div class="identity-text">
 
-    </div>
+                    <span class="identity-title">
+                        PROJECT AURORA
+                    </span>
 
+                    <span class="identity-subtitle">
+                        OFFICIAL MEMBER
+                    </span>
 
+                </div>
 
-    <!-- BLACK AURORA STUDIOS -->
-
-    <article
-        class="home-feature-card studios-feature"
-        onclick="navigate('studios')"
-    >
-
-        <div class="feature-image studios-image"></div>
-
-
-        <div class="feature-overlay"></div>
-
-
-        <div class="feature-content">
-
-            <div class="feature-label">
-
-                <span class="feature-symbol">
-                    ✧
-                </span>
-
-                BLACK AURORA STUDIOS
-
-            </div>
+            </a>
 
 
-            <h2>
-                RECONSTRUCTING
-                WHAT WAS LEFT
-                BEHIND.
-            </h2>
+            <!-- MENU -->
 
+            <button
+                class="aurora-menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
 
-            <p>
-
-                A visual archive of photographs,
-                recordings and fragments associated
-                with A-17.
-
-            </p>
-
-
-            <button class="outline-button">
-
-                ENTER STUDIOS
-
-                <span>→</span>
+                <span></span>
+                <span></span>
+                <span></span>
 
             </button>
 
+        </header>
+
+
+
+        <!-- =================================================
+             HERO CONTENT
+        ================================================== -->
+
+        <main class="home-content">
+
+            <section class="hero-section">
+
+
+                <!-- SYSTEM STATUS -->
+
+                <div class="system-status">
+
+                    <span>SYSTEM STATUS</span>
+
+                    <span class="status-separator">•</span>
+
+                    <span class="status-active">
+                        ACTIVE
+                    </span>
+
+                </div>
+
+
+                <!-- DATE -->
+
+                <div class="hero-date">
+
+                    19 SEPTEMBER 2026
+                    <span>•</span>
+                    DAY 01
+
+                </div>
+
+
+                <!-- MAIN STATEMENT -->
+
+                <h1 class="hero-title">
+
+                    SOME THINGS<br>
+
+                    ARE MADE<br>
+
+                    TO BE SEEN.<br>
+
+                    SOME ARE MADE<br>
+
+                    TO BE REMEMBERED.
+
+                </h1>
+
+
+                <!-- INTRO -->
+
+                <div class="hero-introduction">
+
+                    <p>
+                        You have reached the beginning.
+                    </p>
+
+                    <p>
+                        Everything you find here<br>
+                        was left for a reason.
+                    </p>
+
+                </div>
+
+
+                <!-- SCROLL -->
+
+                <div class="hero-scroll">
+
+                    <span>SCROLL</span>
+
+                    <div class="scroll-arrow">
+                        ↓
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 LOWER HOME AREA
+            ================================================== -->
+
+            <section class="home-lower-content">
+
+
+                <!-- ARCHIVE MESSAGE -->
+
+                <div class="archive-message">
+
+                    <span>
+                        A HIGHER ARCHIVE AWAITS
+                    </span>
+
+                    <div class="archive-line"></div>
+
+                </div>
+
+
+
+                <!-- TODAY'S TRANSMISSION -->
+
+                <section class="home-feature">
+
+                    <div class="feature-label">
+                        KAIROS
+                    </div>
+
+                    <h2>
+                        TODAY'S<br>
+                        TRANSMISSION
+                    </h2>
+
+                    <p>
+                        A new signal has entered
+                        the Aurora archive.
+                    </p>
+
+                    <a
+                        href="https://example.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="outline-action"
+                    >
+
+                        <span>
+                            OPEN TRANSMISSION
+                        </span>
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     TODAY IN AURORA
+                ================================================== -->
+
+                <section class="home-story">
+
+                    <div class="section-meta">
+
+                        <span>
+                            THE ARCHIVE
+                        </span>
+
+                        <span>
+                            01
+                        </span>
+
+                    </div>
+
+                    <h2>
+                        TODAY IN<br>
+                        AURORA
+                    </h2>
+
+                    <p>
+                        Every day leaves something behind.
+                        Some moments deserve to remain.
+                    </p>
+
+                    <a
+                        href="timeline.html"
+                        class="text-link"
+                    >
+                        VIEW TIMELINE
+                        <span>→</span>
+                    </a>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     RECENTLY ADDED
+                ================================================== -->
+
+                <section class="recent-section">
+
+                    <div class="section-meta">
+
+                        <span>
+                            LIVE ARCHIVE
+                        </span>
+
+                        <span>
+                            02
+                        </span>
+
+                    </div>
+
+                    <h2>
+                        RECENTLY<br>
+                        ADDED
+                    </h2>
+
+
+                    <div class="recent-list">
+
+
+                        <a
+                            href="publications.html"
+                            class="recent-item"
+                        >
+
+                            <span class="recent-number">
+                                01
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    PUBLICATION
+                                </small>
+
+                                <strong>
+                                    The Aurora Chronicles
+                                </strong>
+
+                            </div>
+
+                            <span>
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="artifacts.html"
+                            class="recent-item"
+                        >
+
+                            <span class="recent-number">
+                                02
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    ARTIFACT
+                                </small>
+
+                                <strong>
+                                    A Newly Catalogued Object
+                                </strong>
+
+                            </div>
+
+                            <span>
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="timeline.html"
+                            class="recent-item"
+                        >
+
+                            <span class="recent-number">
+                                03
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    TIMELINE
+                                </small>
+
+                                <strong>
+                                    The First Signal
+                                </strong>
+
+                            </div>
+
+                            <span>
+                                →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     AURORA IN ONE GLANCE
+                ================================================== -->
+
+                <section class="glance-section">
+
+                    <div class="section-meta">
+
+                        <span>
+                            SYSTEM OVERVIEW
+                        </span>
+
+                        <span>
+                            03
+                        </span>
+
+                    </div>
+
+                    <h2>
+                        AURORA —<br>
+                        IN ONE GLANCE
+                    </h2>
+
+
+                    <div class="glance-grid">
+
+                        <div class="glance-card">
+
+                            <strong>07</strong>
+
+                            <span>
+                                DAYS
+                            </span>
+
+                        </div>
+
+
+                        <div class="glance-card">
+
+                            <strong>02</strong>
+
+                            <span>
+                                PUBLICATIONS
+                            </span>
+
+                        </div>
+
+
+                        <div class="glance-card">
+
+                            <strong>16+</strong>
+
+                            <span>
+                                ARTIFACTS
+                            </span>
+
+                        </div>
+
+
+                        <div class="glance-card">
+
+                            <strong>355</strong>
+
+                            <span>
+                                ARCHIVED RECORDS
+                            </span>
+
+                        </div>
+
+
+                        <div class="glance-card">
+
+                            <strong>01</strong>
+
+                            <span>
+                                STORY
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     ENDING
+                ================================================== -->
+
+                <section class="home-ending">
+
+                    <div class="ending-symbol">
+                        ✦
+                    </div>
+
+                    <p>
+                        There is more here<br>
+                        than what is visible.
+                    </p>
+
+                    <a
+                        href="timeline.html"
+                        class="ending-button"
+                    >
+
+                        <span>
+                            EXPLORE AURORA
+                        </span>
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+                </section>
+
+            </section>
+
+        </main>
+
+
+
+        <!-- =================================================
+             SLIDE-IN MENU
+        ================================================== -->
+
+        <div
+            class="aurora-menu"
+            id="auroraMenu"
+            aria-hidden="true"
+        >
+
+            <div
+                class="menu-backdrop"
+                id="menuBackdrop"
+            ></div>
+
+
+            <aside class="menu-panel">
+
+
+                <!-- MENU HEADER -->
+
+                <div class="menu-top">
+
+                    <div>
+
+                        <span class="menu-label">
+                            PROJECT AURORA
+                        </span>
+
+                        <h2>
+                            MENU
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="menu-close"
+                        id="menuClose"
+                        aria-label="Close menu"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+
+                <!-- MAIN NAVIGATION -->
+
+                <nav class="menu-navigation">
+
+
+                    <a
+                        href="index.html"
+                        class="menu-navigation-item active"
+                    >
+
+                        <span class="menu-icon">
+                            ⌂
+                        </span>
+
+                        <span>
+                            Home
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="notifications.html"
+                        class="menu-navigation-item"
+                    >
+
+                        <span class="menu-icon">
+                            ♧
+                        </span>
+
+                        <span>
+                            Notifications
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="timeline.html"
+                        class="menu-navigation-item"
+                    >
+
+                        <span class="menu-icon">
+                            ◉
+                        </span>
+
+                        <span>
+                            Timeline
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="publications.html"
+                        class="menu-navigation-item"
+                    >
+
+                        <span class="menu-icon">
+                            ▣
+                        </span>
+
+                        <span>
+                            Publications
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="artifacts.html"
+                        class="menu-navigation-item"
+                    >
+
+                        <span class="menu-icon">
+                            ◇
+                        </span>
+
+                        <span>
+                            Artifacts
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="profile.html"
+                        class="menu-navigation-item"
+                    >
+
+                        <span class="menu-icon">
+                            ♙
+                        </span>
+
+                        <span>
+                            Profile
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- EXTERNAL KAIROS -->
+
+                    <a
+                        href="https://example.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="menu-navigation-item external"
+                    >
+
+                        <span class="menu-icon">
+                            ✧
+                        </span>
+
+                        <span>
+                            KAIROS
+                        </span>
+
+                        <span class="external-arrow">
+                            ↗
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- EXTERNAL STUDIOS -->
+
+                    <a
+                        href="https://example.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="menu-navigation-item external"
+                    >
+
+                        <span class="menu-icon">
+                            ◈
+                        </span>
+
+                        <span>
+                            Black Aurora Studios
+                        </span>
+
+                        <span class="external-arrow">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </nav>
+
+
+
+                <!-- ARCHIVE AREA -->
+
+                <div class="menu-divider"></div>
+
+                <div class="menu-section-label">
+                    ARCHIVE
+                </div>
+
+
+                <div class="menu-secondary">
+
+                    <a href="timeline.html">
+                        About Aurora
+                    </a>
+
+                    <a href="profile.html">
+                        System Information
+                    </a>
+
+                    <a href="profile.html">
+                        Clearance
+                    </a>
+
+                </div>
+
+
+
+                <!-- MENU QUOTE -->
+
+                <div class="menu-quote">
+
+                    <p>
+                        Not just a project.<br>
+                        A connection.
+                    </p>
+
+                </div>
+
+
+            </aside>
+
         </div>
 
-    </article>
 
 
+        <!-- =================================================
+             FIXED BOTTOM NAVIGATION
+        ================================================== -->
 
-    <!-- KAIROS + NOTIFICATIONS -->
+        <nav class="bottom-navigation">
 
-    <div class="home-two-column">
 
+            <a
+                href="index.html"
+                class="bottom-item active"
+            >
 
-        <!-- KAIROS -->
+                <span class="bottom-icon">
+                    ⌂
+                </span>
 
-        <article
-            class="home-card kairos-card"
-            onclick="navigate('kairos')"
-        >
+                <span>
+                    HOME
+                </span>
 
-            <div class="card-image kairos-image"></div>
+            </a>
 
-            <div class="card-overlay"></div>
 
+            <a
+                href="notifications.html"
+                class="bottom-item"
+            >
 
-            <div class="home-card-content">
-
-                <div class="feature-label">
-
-                    <span class="feature-symbol">
-                        ◎
-                    </span>
-
-                    KAIROS
-
-                </div>
-
-
-                <div class="small-label">
-                    MISSION DIRECTOR
-                </div>
-
-
-                <p class="kairos-quote">
-
-                    “The archive is open.
-
-                    <br>
-
-                    You don't need to understand
-                    everything yet.
-
-                    <br>
-
-                    Just begin.”
-
-                </p>
-
-
-                <button class="outline-button">
-
-                    CHAT WITH KAIROS
-
-                    <span>→</span>
-
-                </button>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- NOTIFICATIONS -->
-
-        <article
-            class="home-card notification-preview"
-            onclick="navigate('notifications')"
-        >
-
-            <div class="notification-header">
-
-                <div class="feature-label">
-
-                    <span class="feature-symbol">
-                        ♧
-                    </span>
-
-                    NOTIFICATIONS
-
-                    <span class="notification-count">
-                        3
-                    </span>
-
-                </div>
-
-                <span>→</span>
-
-            </div>
-
-
-            <div class="notification-mini-list">
-
-
-                <div class="mini-notification">
-
-                    <div class="notification-dot"></div>
-
-                    <div>
-
-                        <strong>
-                            KAIROS
-                        </strong>
-
-                        <small>
-                            2h ago
-                        </small>
-
-                        <p>
-                            New briefing file has been
-                            added to the archive.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="mini-notification">
-
-                    <div class="notification-dot"></div>
-
-                    <div>
-
-                        <strong>
-                            LAYRA
-                        </strong>
-
-                        <small>
-                            4h ago
-                        </small>
-
-                        <p>
-                            Artifact 004 has been
-                            catalogued.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="mini-notification">
-
-                    <div class="notification-dot"></div>
-
-                    <div>
-
-                        <strong>
-                            KAIROS
-                        </strong>
-
-                        <small>
-                            6h ago
-                        </small>
-
-                        <p>
-                            A new transmission is available.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="view-all-link">
-
-                View all notifications
-                <span>→</span>
-
-            </div>
-
-        </article>
-
-    </div>
-
-
-
-    <!-- PUBLICATIONS + ARTIFACTS -->
-
-    <div class="home-two-column">
-
-
-        <!-- PUBLICATIONS -->
-
-        <article
-            class="home-card"
-            onclick="navigate('publications')"
-        >
-
-            <div class="feature-label">
-
-                <span class="feature-symbol">
+                <span class="bottom-icon">
                     ♧
                 </span>
 
-                BLACK AURORA PUBLICATIONS
-
-            </div>
-
-
-            <div class="small-label">
-                WORDS PRESERVE WHAT MEMORY CANNOT.
-            </div>
-
-
-            <div class="publication-preview-grid">
-
-                <div class="publication-mini">
-
-                    <div class="publication-cover aurora-cover"></div>
-
-                    <strong>
-                        THE AURORA
-                        CHRONICLES
-                    </strong>
-
-                    <small>
-                        6,209 Days of
-                        Becoming You
-                    </small>
-
-                </div>
-
-
-                <div class="publication-mini">
-
-                    <div class="publication-cover obsidian-cover"></div>
-
-                    <strong>
-                        AURORA
-                        OBSIDIAN
-                    </strong>
-
-                    <small>
-                        Forged from Everything
-                        That Tried to Break You
-                    </small>
-
-                </div>
-
-            </div>
-
-
-            <button class="outline-button">
-
-                EXPLORE PUBLICATIONS
-
-                <span>→</span>
-
-            </button>
-
-        </article>
-
-
-
-        <!-- ARTIFACTS -->
-
-        <article
-            class="home-card"
-            onclick="navigate('artifacts')"
-        >
-
-            <div class="feature-label">
-
-                <span class="feature-symbol">
-                    ◇
-                </span>
-
-                ARTIFACTS
-
-            </div>
-
-
-            <div class="small-label">
-                OBJECTS THAT SURVIVED THE STORY.
-            </div>
-
-
-            <div class="artifact-preview-grid">
-
-                <div class="artifact-mini orb-image">
-                    <span>THE ORB</span>
-                </div>
-
-                <div class="artifact-mini key-image">
-                    <span>THE KEY</span>
-                </div>
-
-                <div class="artifact-mini note-image">
-                    <span>THE NOTE</span>
-                </div>
-
-            </div>
-
-
-            <button class="outline-button">
-
-                VIEW ARTIFACTS
-
-                <span>→</span>
-
-            </button>
-
-        </article>
-
-    </div>
-
-
-
-    <!-- TIMELINE PREVIEW -->
-
-    <article
-        class="timeline-preview"
-        onclick="navigate('timeline')"
-    >
-
-        <div class="timeline-preview-header">
-
-            <div>
-
-                <div class="feature-label">
-
-                    <span class="feature-symbol">
-                        □
-                    </span>
-
-                    THE TIMELINE
-
-                </div>
-
-                <p>
-                    Each day unlocks a new chapter.
-                </p>
-
-            </div>
-
-
-            <button class="outline-button small-button">
-
-                VIEW TIMELINE
-                <span>→</span>
-
-            </button>
-
-        </div>
-
-
-
-        <div class="timeline-line">
-
-
-            <div class="timeline-node unlocked">
-
-                <span></span>
-
-                <strong>
-                    19 SEP
-                </strong>
-
-                <small>
-                    THE FIRST SIGNAL
-                </small>
-
-            </div>
-
-
-            <div class="timeline-node">
-
                 <span>
-                    🔒
+                    NOTIFICATIONS
                 </span>
 
-                <strong>
-                    20 SEP
-                </strong>
+            </a>
 
-                <small>
-                    THE ORIGIN
-                </small>
 
-            </div>
+            <!-- KAIROS — EXTERNAL WEBSITE -->
 
-
-            <div class="timeline-node locked">
-
-                <span>
-                    🔒
-                </span>
-
-                <strong>
-                    21 SEP
-                </strong>
-
-                <small>
-                    CHRONICLES
-                </small>
-
-            </div>
-
-
-            <div class="timeline-node locked">
-
-                <span>
-                    🔒
-                </span>
-
-                <strong>
-                    22 SEP
-                </strong>
-
-                <small>
-                    STUDIOS
-                </small>
-
-            </div>
-
-
-            <div class="timeline-node locked">
-
-                <span>
-                    🔒
-                </span>
-
-                <strong>
-                    23 SEP
-                </strong>
-
-                <small>
-                    ORACLE
-                </small>
-
-            </div>
-
-
-            <div class="timeline-node locked">
-
-                <span>
-                    🔒
-                </span>
-
-                <strong>
-                    24 SEP
-                </strong>
-
-                <small>
-                    FINAL SIGNAL
-                </small>
-
-            </div>
-
-
-            <div class="timeline-node locked">
-
-                <span>
-                    🔒
-                </span>
-
-                <strong>
-                    25 SEP
-                </strong>
-
-                <small>
-                    HOMECOMING
-                </small>
-
-            </div>
-
-        </div>
-
-    </article>
-
-
-
-    <!-- HOME END -->
-
-    <div class="home-ending">
-
-        <p>
-            There is more here than what is visible.
-        </p>
-
-        <span>
-            ✧
-        </span>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PAGE 02 — BRIEFING ROOM
-========================================================= -->
-
-<section
-    id="briefing"
-    class="page"
->
-
-    <div class="page-inner">
-
-
-        <button
-            class="back-button"
-            onclick="navigate('home')"
-        >
-            ← HOME
-        </button>
-
-
-        <div class="page-eyebrow">
-            AURORA / CURRENT BRIEFING
-        </div>
-
-
-        <h1 class="page-title">
-            BRIEFING ROOM
-        </h1>
-
-
-        <p class="page-subtitle">
-            The current state of the archive.
-        </p>
-
-
-
-        <!-- CURRENT BRIEFING -->
-
-        <article class="briefing-main-card">
-
-            <div class="briefing-image"></div>
-
-
-            <div class="briefing-content">
-
-                <div class="briefing-meta">
-                    DAY 01
-                    <span>·</span>
-                    19 SEPTEMBER 2026
-                </div>
-
-
-                <h2>
-                    THE FIRST SIGNAL
-                </h2>
-
-
-                <p>
-                    The first artifact has been released.
-                    Something has arrived before the
-                    story begins.
-                </p>
-
-
-                <button class="outline-button">
-
-                    READ BRIEFING
-
-                    <span>→</span>
-
-                </button>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- PREVIOUS BRIEFINGS -->
-
-        <div class="section-heading">
-
-            <span>
-                PREVIOUS BRIEFINGS
-            </span>
-
-            <span>
-                ARCHIVE
-            </span>
-
-        </div>
-
-
-        <div class="briefing-list">
-
-
-            <article class="briefing-row">
-
-                <span class="briefing-number">
-                    01
-                </span>
-
-                <div>
-
-                    <strong>
-                        THE FIRST SIGNAL
-                    </strong>
-
-                    <small>
-                        Day 01 · 19 Sep
-                    </small>
-
-                </div>
-
-                <span class="row-arrow">
-                    →
-                </span>
-
-            </article>
-
-
-            <article class="briefing-row locked-row">
-
-                <span class="briefing-number">
-                    02
-                </span>
-
-                <div>
-
-                    <strong>
-                        THE ORIGIN
-                    </strong>
-
-                    <small>
-                        Day 02 · Locked
-                    </small>
-
-                </div>
-
-                <span>
-                    🔒
-                </span>
-
-            </article>
-
-
-            <article class="briefing-row locked-row">
-
-                <span class="briefing-number">
-                    03
-                </span>
-
-                <div>
-
-                    <strong>
-                        CHRONICLES
-                    </strong>
-
-                    <small>
-                        Day 03 · Locked
-                    </small>
-
-                </div>
-
-                <span>
-                    🔒
-                </span>
-
-            </article>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PAGE 03 — BLACK AURORA STUDIOS
-========================================================= -->
-
-<section
-    id="studios"
-    class="page"
->
-
-    <div class="page-inner">
-
-
-        <button
-            class="back-button"
-            onclick="navigate('home')"
-        >
-            ← HOME
-        </button>
-
-
-        <div class="page-eyebrow">
-            MEDIA / VISUAL ARCHIVE
-        </div>
-
-
-        <h1 class="page-title">
-            BLACK AURORA
-            <br>
-            STUDIOS
-        </h1>
-
-
-        <p class="page-subtitle">
-            Reconstructing what was left behind.
-        </p>
-
-
-
-        <!-- STUDIO HERO -->
-
-        <article class="studio-hero">
-
-            <div class="studio-hero-image"></div>
-
-            <div class="studio-hero-overlay"></div>
-
-
-            <div class="studio-hero-content">
-
-                <div class="feature-label">
-                    ✧ BLACK AURORA STUDIOS
-                </div>
-
-
-                <h2>
-                    A VISUAL ARCHIVE
-                    OF WHAT REMAINS.
-                </h2>
-
-
-                <p>
-                    Photographs, recordings,
-                    visual fragments and memories
-                    associated with A-17.
-                </p>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- STUDIO CATEGORIES -->
-
-        <div class="category-tabs">
-
-            <button class="active">
-                PHOTOS
-            </button>
-
-            <button>
-                VIDEOS
-            </button>
-
-            <button>
-                ARCHIVE
-            </button>
-
-            <button>
-                A-17
-            </button>
-
-        </div>
-
-
-
-        <!-- VISUAL RECORDS -->
-
-        <div class="visual-grid">
-
-
-            <article class="visual-record visual-one">
-
-                <div class="visual-image"></div>
-
-                <div class="visual-info">
-
-                    <span>
-                        RECORD 001
-                    </span>
-
-                    <h3>
-                        THE ROOM
-                    </h3>
-
-                </div>
-
-            </article>
-
-
-            <article class="visual-record visual-two">
-
-                <div class="visual-image"></div>
-
-                <div class="visual-info">
-
-                    <span>
-                        RECORD 002
-                    </span>
-
-                    <h3>
-                        THE OBSERVER
-                    </h3>
-
-                </div>
-
-            </article>
-
-
-            <article class="visual-record visual-three">
-
-                <div class="visual-image"></div>
-
-                <div class="visual-info">
-
-                    <span>
-                        RECORD 003
-                    </span>
-
-                    <h3>
-                        THE SIGNAL
-                    </h3>
-
-                </div>
-
-            </article>
-
-
-            <article class="visual-record visual-four">
-
-                <div class="visual-image"></div>
-
-                <div class="visual-info">
-
-                    <span>
-                        RECORD 004
-                    </span>
-
-                    <h3>
-                        WHAT REMAINS
-                    </h3>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PAGE 04 — PUBLICATIONS
-========================================================= -->
-
-<section
-    id="publications"
-    class="page"
->
-
-    <div class="page-inner">
-
-
-        <button
-            class="back-button"
-            onclick="navigate('home')"
-        >
-            ← HOME
-        </button>
-
-
-        <div class="page-eyebrow">
-            WORDS / MEMORY / ARCHIVE
-        </div>
-
-
-        <h1 class="page-title">
-            PUBLICATIONS
-        </h1>
-
-
-        <p class="page-subtitle">
-            Words preserve what memory cannot.
-        </p>
-
-
-
-        <!-- PUBLICATION 01 -->
-
-        <article class="publication-card">
-
-            <div class="large-publication-cover aurora-cover">
-
-                <span>
-                    PROJECT
-                    <br>
-                    AURORA
-                </span>
-
-            </div>
-
-
-            <div class="publication-content">
-
-                <div class="publication-number">
-                    01
-                </div>
-
-                <h2>
-                    THE AURORA
-                    CHRONICLES
-                </h2>
-
-
-                <p class="publication-tagline">
-                    6,209 Days of Becoming You
-                </p>
-
-
-                <p>
-                    A collection of memories,
-                    moments and stories preserved
-                    inside the Aurora archive.
-                </p>
-
-
-                <button class="outline-button">
-
-                    OPEN PUBLICATION
-
-                    <span>→</span>
-
-                </button>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- PUBLICATION 02 -->
-
-        <article class="publication-card reverse">
-
-            <div class="large-publication-cover obsidian-cover">
-
-                <span>
-                    AURORA
-                    <br>
-                    OBSIDIAN
-                </span>
-
-            </div>
-
-
-            <div class="publication-content">
-
-                <div class="publication-number">
-                    02
-                </div>
-
-                <h2>
-                    AURORA
-                    OBSIDIAN
-                </h2>
-
-
-                <p class="publication-tagline">
-                    Forged from Everything
-                    That Tried to Break You
-                </p>
-
-
-                <p>
-                    A darker volume from the archive.
-                    Fragments, reflections and things
-                    that were never meant to disappear.
-                </p>
-
-
-                <button class="outline-button">
-
-                    OPEN PUBLICATION
-
-                    <span>→</span>
-
-                </button>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PAGE 05 — ARTIFACTS
-========================================================= -->
-
-<section
-    id="artifacts"
-    class="page"
->
-
-    <div class="page-inner">
-
-
-        <button
-            class="back-button"
-            onclick="navigate('home')"
-        >
-            ← HOME
-        </button>
-
-
-        <div class="page-eyebrow">
-            OBJECTS / FRAGMENTS / RECORDS
-        </div>
-
-
-        <h1 class="page-title">
-            ARTIFACTS
-        </h1>
-
-
-        <p class="page-subtitle">
-            Objects that survived the story.
-        </p>
-
-
-
-        <div class="artifact-grid">
-
-
-            <article
-                class="artifact-card"
-                onclick="openArtifact('orb')"
+            <a
+                href="https://example.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bottom-item"
             >
 
-                <div class="artifact-image orb-image"></div>
-
-                <div class="artifact-card-content">
-
-                    <span>
-                        ARTIFACT 001
-                    </span>
-
-                    <h2>
-                        THE ORB
-                    </h2>
-
-                    <p>
-                        A strange object recovered
-                        from the first signal.
-                    </p>
-
-                    <strong>
-                        VIEW RECORD →
-                    </strong>
-
-                </div>
-
-            </article>
-
-
-
-            <article
-                class="artifact-card"
-                onclick="openArtifact('key')"
-            >
-
-                <div class="artifact-image key-image"></div>
-
-                <div class="artifact-card-content">
-
-                    <span>
-                        ARTIFACT 002
-                    </span>
-
-                    <h2>
-                        THE KEY
-                    </h2>
-
-                    <p>
-                        A key without a known lock.
-                    </p>
-
-                    <strong>
-                        VIEW RECORD →
-                    </strong>
-
-                </div>
-
-            </article>
-
-
-
-            <article
-                class="artifact-card"
-                onclick="openArtifact('note')"
-            >
-
-                <div class="artifact-image note-image"></div>
-
-                <div class="artifact-card-content">
-
-                    <span>
-                        ARTIFACT 003
-                    </span>
-
-                    <h2>
-                        THE NOTE
-                    </h2>
-
-                    <p>
-                        A fragment of handwriting
-                        recovered from the archive.
-                    </p>
-
-                    <strong>
-                        VIEW RECORD →
-                    </strong>
-
-                </div>
-
-            </article>
-
-
-
-            <article
-                class="artifact-card"
-                onclick="openArtifact('pendant')"
-            >
-
-                <div class="artifact-image pendant-image"></div>
-
-                <div class="artifact-card-content">
-
-                    <span>
-                        ARTIFACT 004
-                    </span>
-
-                    <h2>
-                        THE PENDANT
-                    </h2>
-
-                    <p>
-                        Catalogued by Layra.
-                    </p>
-
-                    <strong>
-                        VIEW RECORD →
-                    </strong>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PAGE 06 — TIMELINE
-========================================================= -->
-
-<section
-    id="timeline"
-    class="page"
->
-
-    <div class="page-inner">
-
-
-        <button
-            class="back-button"
-            onclick="navigate('home')"
-        >
-            ← HOME
-        </button>
-
-
-        <div class="page-eyebrow">
-            THE JOURNEY
-        </div>
-
-
-        <h1 class="page-title">
-            THE TIMELINE
-        </h1>
-
-
-        <p class="page-subtitle">
-            Each day unlocks a new chapter.
-        </p>
-
-
-
-        <div class="timeline-full">
-
-
-            <!-- DAY 01 -->
-
-            <article class="timeline-chapter unlocked">
-
-                <div class="timeline-marker">
-                    <span></span>
-                </div>
-
-
-                <div class="timeline-date">
-                    19 SEP
-                </div>
-
-
-                <div class="timeline-chapter-content">
-
-                    <span>
-                        DAY 01
-                    </span>
-
-                    <h2>
-                        THE FIRST SIGNAL
-                    </h2>
-
-                    <p>
-                        The first artifact has arrived
-                        before the story begins.
-                    </p>
-
-                    <button class="text-button">
-                        ENTER CHAPTER →
-                    </button>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- DAY 02 -->
-
-            <article class="timeline-chapter unlocked">
-
-                <div class="timeline-marker">
-                    <span></span>
-                </div>
-
-
-                <div class="timeline-date">
-                    20 SEP
-                </div>
-
-
-                <div class="timeline-chapter-content">
-
-                    <span>
-                        DAY 02
-                    </span>
-
-                    <h2>
-                        THE ORIGIN
-                    </h2>
-
-                    <p>
-                        Where it all starts to make sense.
-                    </p>
-
-                    <button class="text-button">
-                        ENTER CHAPTER →
-                    </button>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- DAY 03 -->
-
-            <article class="timeline-chapter locked">
-
-                <div class="timeline-marker">
-                    🔒
-                </div>
-
-
-                <div class="timeline-date">
-                    21 SEP
-                </div>
-
-
-                <div class="timeline-chapter-content">
-
-                    <span>
-                        DAY 03
-                    </span>
-
-                    <h2>
-                        CHRONICLES
-                    </h2>
-
-                    <p>
-                        Words from the other side.
-                    </p>
-
-                    <small>
-                        LOCKED
-                    </small>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- DAY 04 -->
-
-            <article class="timeline-chapter locked">
-
-                <div class="timeline-marker">
-                    🔒
-                </div>
-
-
-                <div class="timeline-date">
-                    22 SEP
-                </div>
-
-
-                <div class="timeline-chapter-content">
-
-                    <span>
-                        DAY 04
-                    </span>
-
-                    <h2>
-                        STUDIOS
-                    </h2>
-
-                    <p>
-                        Frames of a forgotten world.
-                    </p>
-
-                    <small>
-                        LOCKED
-                    </small>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- DAY 05 -->
-
-            <article class="timeline-chapter locked">
-
-                <div class="timeline-marker">
-                    🔒
-                </div>
-
-
-                <div class="timeline-date">
-                    23 SEP
-                </div>
-
-
-                <div class="timeline-chapter-content">
-
-                    <span>
-                        DAY 05
-                    </span>
-
-                    <h2>
-                        ORACLE
-                    </h2>
-
-                    <p>
-                        Questions find their place.
-                    </p>
-
-                    <small>
-                        LOCKED
-                    </small>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- DAY 06 -->
-
-            <article class="timeline-chapter locked">
-
-                <div class="timeline-marker">
-                    🔒
-                </div>
-
-
-                <div class="timeline-date">
-                    24 SEP
-                </div>
-
-
-                <div class="timeline-chapter-content">
-
-                    <span>
-                        DAY 06
-                    </span>
-
-                    <h2>
-                        FINAL SIGNAL
-                    </h2>
-
-                    <p>
-                        The truth is closer.
-                    </p>
-
-                    <small>
-                        LOCKED
-                    </small>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- DAY 07 -->
-
-            <article class="timeline-chapter locked">
-
-                <div class="timeline-marker">
-                    🔒
-                </div>
-
-
-                <div class="timeline-date">
-                    25 SEP
-                </div>
-
-
-                <div class="timeline-chapter-content">
-
-                    <span>
-                        DAY 07
-                    </span>
-
-                    <h2>
-                        HOMECOMING
-                    </h2>
-
-                    <p>
-                        Everything connects.
-                    </p>
-
-                    <small>
-                        LOCKED
-                    </small>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PAGE 07 — NOTIFICATIONS
-========================================================= -->
-
-<section
-    id="notifications"
-    class="page"
->
-
-    <div class="page-inner">
-
-
-        <button
-            class="back-button"
-            onclick="navigate('home')"
-        >
-            ← HOME
-        </button>
-
-
-        <div class="page-eyebrow">
-            MESSAGES / UPDATES / TRANSMISSIONS
-        </div>
-
-
-        <h1 class="page-title">
-            NOTIFICATIONS
-        </h1>
-
-
-        <p class="page-subtitle">
-            New information from the Aurora archive.
-        </p>
-
-
-
-        <!-- FILTER / CATEGORY BAR -->
-
-        <div class="notification-tabs">
-
-            <button class="active">
-                ALL
-            </button>
-
-            <button>
-                SYSTEM
-            </button>
-
-            <button>
-                KAIROS
-            </button>
-
-            <button>
-                ARCHIVE
-            </button>
-
-        </div>
-
-
-
-        <!-- NOTIFICATION LIST -->
-
-        <div
-            id="notification-list"
-            class="notification-list"
-        >
-
-            <!-- JS can later generate these manually from
-                 the notifications array -->
-
-            <article
-                class="notification-item"
-                onclick="openNotification('briefing')"
-            >
-
-                <div class="notification-thumb transmission-thumb"></div>
-
-
-                <div class="notification-content">
-
-                    <div class="notification-meta">
-
-                        <strong>
-                            KAIROS
-                        </strong>
-
-                        <span>
-                            2h ago
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        New briefing file
-                    </h3>
-
-
-                    <p>
-                        A new briefing file has been
-                        added to the archive.
-                    </p>
-
-                </div>
-
-
-                <span class="notification-arrow">
-                    →
+                <span class="bottom-icon">
+                    ✧
                 </span>
 
-            </article>
-
-
-
-            <article
-                class="notification-item"
-                onclick="openNotification('artifact')"
-            >
-
-                <div class="notification-thumb artifact-thumb"></div>
-
-
-                <div class="notification-content">
-
-                    <div class="notification-meta">
-
-                        <strong>
-                            LAYRA
-                        </strong>
-
-                        <span>
-                            4h ago
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        Artifact catalogued
-                    </h3>
-
-
-                    <p>
-                        Artifact 004 has been catalogued.
-                    </p>
-
-                </div>
-
-
-                <span class="notification-arrow">
-                    →
-                </span>
-
-            </article>
-
-
-
-            <article
-                class="notification-item"
-                onclick="openNotification('visual')"
-            >
-
-                <div class="notification-thumb visual-thumb"></div>
-
-
-                <div class="notification-content">
-
-                    <div class="notification-meta">
-
-                        <strong>
-                            SYSTEM
-                        </strong>
-
-                        <span>
-                            6h ago
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        New visual records
-                    </h3>
-
-
-                    <p>
-                        New visual records have been
-                        archived.
-                    </p>
-
-                </div>
-
-
-                <span class="notification-arrow">
-                    →
-                </span>
-
-            </article>
-
-
-
-            <article
-                class="notification-item"
-                onclick="openNotification('publication')"
-            >
-
-                <div class="notification-thumb book-thumb"></div>
-
-
-                <div class="notification-content">
-
-                    <div class="notification-meta">
-
-                        <strong>
-                            PUBLICATIONS
-                        </strong>
-
-                        <span>
-                            8h ago
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        Chronicle released
-                    </h3>
-
-
-                    <p>
-                        A new publication has entered
-                        the archive.
-                    </p>
-
-                </div>
-
-
-                <span class="notification-arrow">
-                    →
-                </span>
-
-            </article>
-
-
-
-            <article
-                class="notification-item"
-                onclick="openNotification('delivery')"
-            >
-
-                <div class="notification-thumb orb-image"></div>
-
-
-                <div class="notification-content">
-
-                    <div class="notification-meta">
-
-                        <strong>
-                            ORION
-                        </strong>
-
-                        <span>
-                            1d ago
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        Delivery confirmed
-                    </h3>
-
-
-                    <p>
-                        Artifact delivery has been confirmed.
-                    </p>
-
-                </div>
-
-
-                <span class="notification-arrow">
-                    →
-                </span>
-
-            </article>
-
-
-
-            <article
-                class="notification-item"
-                onclick="openNotification('signal')"
-            >
-
-                <div class="notification-thumb signal-thumb"></div>
-
-
-                <div class="notification-content">
-
-                    <div class="notification-meta">
-
-                        <strong>
-                            KAIROS
-                        </strong>
-
-                        <span>
-                            1d ago
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        New transmission
-                    </h3>
-
-
-                    <p>
-                        A new signal is available.
-                    </p>
-
-                </div>
-
-
-                <span class="notification-arrow">
-                    →
-                </span>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PAGE 08 — KAIROS AI AGENT
-========================================================= -->
-
-<section
-    id="kairos"
-    class="page"
->
-
-    <div class="page-inner kairos-page">
-
-
-        <button
-            class="back-button"
-            onclick="navigate('home')"
-        >
-            ← HOME
-        </button>
-
-
-
-        <div class="kairos-header">
-
-            <div class="kairos-symbol">
-                ◎
-            </div>
-
-
-            <div>
-
-                <div class="page-eyebrow">
-                    SYSTEM / MISSION DIRECTOR
-                </div>
-
-                <h1 class="page-title">
+                <span>
                     KAIROS
-                </h1>
+                </span>
 
-                <div class="kairos-online">
-                    <i></i>
-                    ONLINE
-                </div>
-
-            </div>
-
-        </div>
+            </a>
 
 
-
-        <!-- KAIROS MESSAGE -->
-
-        <div class="kairos-message">
-
-            <div class="message-label">
-                KAIROS
-            </div>
-
-
-            <p>
-
-                The archive is open.
-
-                <br>
-
-                You don't need to understand
-                everything yet.
-
-                <br>
-
-                Just begin.
-
-            </p>
-
-        </div>
-
-
-
-        <!-- AI INTRO -->
-
-        <div class="kairos-introduction">
-
-            <h2>
-                ASK KAIROS
-            </h2>
-
-
-            <p>
-                Ask me anything about Aurora,
-                the archive, its people, artifacts,
-                signals or the story.
-            </p>
-
-        </div>
-
-
-
-        <!-- QUICK QUESTIONS -->
-
-        <div class="kairos-suggestions">
-
-            <button>
-                What is Project Aurora?
-            </button>
-
-            <button>
-                Tell me about A-17.
-            </button>
-
-            <button>
-                Show latest updates.
-            </button>
-
-            <button>
-                Help me explore.
-            </button>
-
-        </div>
-
-
-
-        <!-- CHAT -->
-
-        <div class="chat-container">
-
-            <div
-                id="chat-messages"
-                class="chat-messages"
+            <a
+                href="profile.html"
+                class="bottom-item"
             >
 
-                <div class="chat-message kairos-message-small">
-
-                    <span>
-                        KAIROS
-                    </span>
-
-                    <p>
-                        I'm listening.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="chat-input-area">
-
-                <input
-                    id="kairos-input"
-                    type="text"
-                    placeholder="Type a message..."
-                    autocomplete="off"
-                >
-
-
-                <button
-                    onclick="sendKairosMessage()"
-                    aria-label="Send message"
-                >
-                    →
-                </button>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PREVIOUS SIGNALS -->
-
-        <div class="previous-signals">
-
-            <div class="section-heading">
-
-                <span>
-                    PREVIOUS SIGNALS
-                </span>
-
-                <span>
-                    VIEW ALL →
-                </span>
-
-            </div>
-
-
-            <div class="signal-list">
-
-
-                <article class="signal-row">
-
-                    <div class="signal-icon">
-                        ≋
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Signal 003
-                        </strong>
-
-                        <small>
-                            What Remains
-                        </small>
-
-                    </div>
-
-                    <span>
-                        →
-                    </span>
-
-                </article>
-
-
-                <article class="signal-row">
-
-                    <div class="signal-icon">
-                        ≋
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Signal 002
-                        </strong>
-
-                        <small>
-                            A Different Sky
-                        </small>
-
-                    </div>
-
-                    <span>
-                        →
-                    </span>
-
-                </article>
-
-
-                <article class="signal-row">
-
-                    <div class="signal-icon">
-                        ✧
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Signal 001
-                        </strong>
-
-                        <small>
-                            The Beginning
-                        </small>
-
-                    </div>
-
-                    <span>
-                        →
-                    </span>
-
-                </article>
-
-            </div>
-
-        </div>
-
-
-        <div class="kairos-ending">
-
-            “Some things find you
-            when you're ready.”
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PAGE 09 — PROFILE
-========================================================= -->
-
-<section
-    id="profile"
-    class="page"
->
-
-    <div class="page-inner">
-
-
-        <button
-            class="back-button"
-            onclick="navigate('home')"
-        >
-            ← HOME
-        </button>
-
-
-        <div class="page-eyebrow">
-            PROJECT MEMBER
-        </div>
-
-
-        <div class="profile-hero">
-
-            <div>
-
-                <h1 class="page-title">
-                    Muskan
-                </h1>
-
-
-                <div class="profile-role">
-                    OFFICIAL MEMBER
-                </div>
-
-
-                <p class="profile-quote">
-                    “A quiet observer
-                    <br>
-                    in a loud world.”
-                </p>
-
-            </div>
-
-
-            <div class="profile-large-avatar">
-
-                <img
-                    src="assets/images/muskan.jpg"
-                    alt="Muskan"
-                >
-
-            </div>
-
-        </div>
-
-
-
-        <!-- MEMBER DETAILS -->
-
-        <div class="profile-details-card">
-
-
-            <div class="profile-detail-row">
-
-                <span>
+                <span class="bottom-icon">
                     ♙
-                    Member ID
                 </span>
-
-                <strong>
-                    PA-0047
-                </strong>
-
-            </div>
-
-
-            <div class="profile-detail-row">
 
                 <span>
-                    ♙
-                    Role
+                    PROFILE
                 </span>
 
-                <strong>
-                    Member
-                </strong>
+            </a>
 
-            </div>
-
-
-            <div class="profile-detail-row">
-
-                <span>
-                    ◉
-                    Status
-                </span>
-
-                <strong class="status-active">
-                    <i></i>
-                    Active
-                </strong>
-
-            </div>
-
-
-            <div class="profile-detail-row">
-
-                <span>
-                    ◷
-                    Joined
-                </span>
-
-                <strong>
-                    19 September 2026
-                </strong>
-
-            </div>
-
-
-            <div class="profile-detail-row">
-
-                <span>
-                    ◇
-                    Location
-                </span>
-
-                <strong>
-                    Earth
-                </strong>
-
-            </div>
-
-
-            <div class="profile-detail-row">
-
-                <span>
-                    ♙
-                    Clearance Level
-                </span>
-
-                <strong>
-                    L-1
-                </strong>
-
-            </div>
-
-
-        </div>
-
-
-
-        <button class="outline-button full-width">
-            EDIT PROFILE
-        </button>
-
-
-
-        <!-- ABOUT ME -->
-
-        <div class="profile-section">
-
-            <div class="section-heading">
-                ABOUT ME
-            </div>
-
-
-            <p>
-                Collecting pieces of a bigger story.
-                Somewhere between what is real,
-                and what is remembered.
-            </p>
-
-        </div>
-
-
-
-        <!-- QUICK STATS -->
-
-        <div class="profile-section">
-
-            <div class="section-heading">
-                QUICK STATS
-            </div>
-
-
-            <div class="stats-grid">
-
-
-                <div class="stat-card">
-
-                    <strong>
-                        12
-                    </strong>
-
-                    <span>
-                        Contributions
-                    </span>
-
-                </div>
-
-
-                <div class="stat-card">
-
-                    <strong>
-                        28
-                    </strong>
-
-                    <span>
-                        Days Active
-                    </span>
-
-                </div>
-
-
-                <div class="stat-card">
-
-                    <strong>
-                        5
-                    </strong>
-
-                    <span>
-                        Saved Items
-                    </span>
-
-                </div>
-
-
-                <div class="stat-card">
-
-                    <strong>
-                        ∞
-                    </strong>
-
-                    <span>
-                        Curiosity
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
+        </nav>
 
     </div>
 
-</section>
 
 
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
 
-<!-- =========================================================
-     PAGE 10 — ABOUT AURORA
-========================================================= -->
-
-<section
-    id="about"
-    class="page"
->
-
-    <div class="page-inner">
-
-
-        <button
-            class="back-button"
-            onclick="navigate('home')"
-        >
-            ← HOME
-        </button>
-
-
-        <div class="page-eyebrow">
-            PROJECT INFORMATION
-        </div>
-
-
-        <h1 class="page-title">
-            PROJECT
-            <br>
-            AURORA
-        </h1>
-
-
-        <p class="page-subtitle">
-            A collection of signals,
-            memories and things left behind.
-        </p>
-
-
-
-        <article class="about-main-card">
-
-            <div class="about-image"></div>
-
-
-            <div class="about-content">
-
-                <div class="section-heading">
-                    ABOUT PROJECT AURORA
-                </div>
-
-
-                <p>
-                    Project Aurora is a multi-layered
-                    archive — a living record of people,
-                    places, objects, emotions and moments
-                    that mattered.
-                </p>
-
-
-                <p>
-                    It exists at the intersection of memory
-                    and technology, where the past is
-                    preserved, the present is documented
-                    and the future is carefully guided.
-                </p>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- THE SYSTEM -->
-
-        <div class="profile-section">
-
-            <div class="section-heading">
-                THE SYSTEM
-            </div>
-
-
-            <p class="section-description">
-                Different roles. One mission.
-            </p>
-
-
-            <div class="system-grid">
-
-
-                <article class="system-card">
-
-                    <div class="system-image a17-image"></div>
-
-                    <h3>
-                        A-17
-                    </h3>
-
-                    <span>
-                        THE MISSING RESEARCHER
-                    </span>
-
-                </article>
-
-
-                <article class="system-card">
-
-                    <div class="system-image kairos-symbol-image"></div>
-
-                    <h3>
-                        KAIROS
-                    </h3>
-
-                    <span>
-                        MISSION DIRECTOR
-                    </span>
-
-                </article>
-
-
-                <article class="system-card">
-
-                    <div class="system-image layra-image"></div>
-
-                    <h3>
-                        LAYRA
-                    </h3>
-
-                    <span>
-                        ARTIFACT KEEPER
-                    </span>
-
-                </article>
-
-
-                <article class="system-card">
-
-                    <div class="system-image sia-image"></div>
-
-                    <h3>
-                        SIA
-                    </h3>
-
-                    <span>
-                        THE ARCHITECT
-                    </span>
-
-                </article>
-
-
-                <article class="system-card">
-
-                    <div class="system-image orion-image"></div>
-
-                    <h3>
-                        ORION
-                    </h3>
-
-                    <span>
-                        OPERATIONS
-                    </span>
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PAGE 11 — SYSTEM INFORMATION
-========================================================= -->
-
-<section
-    id="system"
-    class="page"
->
-
-    <div class="page-inner">
-
-
-        <button
-            class="back-button"
-            onclick="navigate('home')"
-        >
-            ← HOME
-        </button>
-
-
-        <div class="page-eyebrow">
-            AURORA CORE
-        </div>
-
-
-        <h1 class="page-title">
-            SYSTEM
-            <br>
-            INFORMATION
-        </h1>
-
-
-        <div class="system-information-card">
-
-            <div class="system-status-large">
-
-                <span>
-                    SYSTEM STATUS
-                </span>
-
-                <strong>
-                    <i></i>
-                    ACTIVE
-                </strong>
-
-            </div>
-
-
-            <div class="system-information-row">
-
-                <span>
-                    PROJECT
-                </span>
-
-                <strong>
-                    AURORA
-                </strong>
-
-            </div>
-
-
-            <div class="system-information-row">
-
-                <span>
-                    CURRENT PHASE
-                </span>
-
-                <strong>
-                    AURORA WEEK
-                </strong>
-
-            </div>
-
-
-            <div class="system-information-row">
-
-                <span>
-                    ARCHIVE SIZE
-                </span>
-
-                <strong>
-                    355+ RECORDS
-                </strong>
-
-            </div>
-
-
-            <div class="system-information-row">
-
-                <span>
-                    ACTIVE DAY
-                </span>
-
-                <strong>
-                    DAY 01
-                </strong>
-
-            </div>
-
-
-            <div class="system-information-row">
-
-                <span>
-                    FOUNDER
-                </span>
-
-                <strong>
-                    AURORA
-                </strong>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="system-quote">
-
-            “Not everything
-            that is lost
-            is gone.”
-
-            <span>
-                ✧
-            </span>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PAGE 12 — CLEARANCE
-========================================================= -->
-
-<section
-    id="clearance"
-    class="page"
->
-
-    <div class="page-inner">
-
-
-        <button
-            class="back-button"
-            onclick="navigate('home')"
-        >
-            ← HOME
-        </button>
-
-
-        <div class="page-eyebrow">
-            ACCESS CONTROL
-        </div>
-
-
-        <h1 class="page-title">
-            CLEARANCE
-        </h1>
-
-
-        <p class="page-subtitle">
-            Your current access level within Aurora.
-        </p>
-
-
-
-        <div class="clearance-card">
-
-            <div class="clearance-symbol">
-                L-1
-            </div>
-
-
-            <div class="clearance-label">
-                MEMBER CLEARANCE
-            </div>
-
-
-            <h2>
-                LEVEL ONE
-            </h2>
-
-
-            <p>
-                Basic archive access has been granted.
-                Some records remain sealed until their
-                corresponding chapter becomes available.
-            </p>
-
-
-            <div class="clearance-line"></div>
-
-
-            <div class="clearance-status">
-
-                <span>
-                    CURRENT ACCESS
-                </span>
-
-                <strong>
-                    ACTIVE
-                </strong>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="locked-content-message">
-
-            <span>
-                🔒
-            </span>
-
-            <h3>
-                SOME THINGS REMAIN HIDDEN.
-            </h3>
-
-            <p>
-                Higher clearance may reveal
-                what is currently invisible.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PAGE 13 — SETTINGS
-========================================================= -->
-
-<section
-    id="settings"
-    class="page"
->
-
-    <div class="page-inner">
-
-
-        <button
-            class="back-button"
-            onclick="navigate('home')"
-        >
-            ← HOME
-        </button>
-
-
-        <div class="page-eyebrow">
-            SYSTEM PREFERENCES
-        </div>
-
-
-        <h1 class="page-title">
-            SETTINGS
-        </h1>
-
-
-        <div class="settings-list">
-
-
-            <div class="settings-row">
-
-                <div>
-
-                    <strong>
-                        Cinematic Mode
-                    </strong>
-
-                    <span>
-                        Preserve Aurora atmosphere
-                    </span>
-
-                </div>
-
-                <button class="toggle active">
-                    <span></span>
-                </button>
-
-            </div>
-
-
-            <div class="settings-row">
-
-                <div>
-
-                    <strong>
-                        Sound
-                    </strong>
-
-                    <span>
-                        Ambient system sounds
-                    </span>
-
-                </div>
-
-                <button class="toggle">
-                    <span></span>
-                </button>
-
-            </div>
-
-
-            <div class="settings-row">
-
-                <div>
-
-                    <strong>
-                        Notifications
-                    </strong>
-
-                    <span>
-                        Allow archive transmissions
-                    </span>
-
-                </div>
-
-                <button class="toggle active">
-                    <span></span>
-                </button>
-
-            </div>
-
-
-            <div class="settings-row">
-
-                <div>
-
-                    <strong>
-                        Reduced Motion
-                    </strong>
-
-                    <span>
-                        Minimize interface animations
-                    </span>
-
-                </div>
-
-                <button class="toggle">
-                    <span></span>
-                </button>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="settings-footer">
-
-            PROJECT AURORA
-
-            <span>
-                v1.0
-            </span>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-</main>
-
-
-
-<!-- =========================================================
-     GLOBAL BOTTOM NAVIGATION
-========================================================= -->
-
-<nav class="bottom-navigation">
-
-
-    <button
-        class="nav-item active-nav"
-        onclick="navigate('home')"
-    >
-
-        <span class="nav-icon">
-            ⌂
-        </span>
-
-        <span>
-            HOME
-        </span>
-
-    </button>
-
-
-
-    <button
-        class="nav-item"
-        onclick="navigate('notifications')"
-    >
-
-        <span class="nav-icon">
-            ♧
-        </span>
-
-        <span class="nav-badge">
-            3
-        </span>
-
-        <span>
-            NOTIFICATIONS
-        </span>
-
-    </button>
-
-
-
-    <button
-        class="nav-item"
-        onclick="navigate('kairos')"
-    >
-
-        <span class="nav-icon">
-            ◇
-        </span>
-
-        <span>
-            KAIROS
-        </span>
-
-    </button>
-
-
-
-    <button
-        class="nav-item"
-        onclick="navigate('profile')"
-    >
-
-        <span class="nav-icon">
-            ♙
-        </span>
-
-        <span>
-            PROFILE
-        </span>
-
-    </button>
-
-
-</nav>
-
-
-
-<!-- =========================================================
-     SIDE MENU
-========================================================= -->
-
-<div
-    id="menu"
-    class="menu-overlay"
->
-
-    <aside class="side-menu">
-
-
-        <div class="menu-top">
-
-            <div class="menu-brand">
-                PROJECT AURORA
-            </div>
-
-
-            <button
-                class="menu-close"
-                onclick="closeMenu()"
-                aria-label="Close menu"
-            >
-                ×
-            </button>
-
-        </div>
-
-
-
-        <!-- MAIN NAVIGATION -->
-
-        <div class="menu-section">
-
-            <div class="menu-section-label">
-                AURORA
-            </div>
-
-
-            <button
-                class="menu-link active"
-                onclick="navigate('home')"
-            >
-                <span>⌂</span>
-                Home
-            </button>
-
-
-            <button
-                class="menu-link"
-                onclick="navigate('briefing')"
-            >
-                <span>♧</span>
-                Briefing Room
-            </button>
-
-
-            <button
-                class="menu-link"
-                onclick="navigate('studios')"
-            >
-                <span>✧</span>
-                Black Aurora Studios
-            </button>
-
-
-            <button
-                class="menu-link"
-                onclick="navigate('publications')"
-            >
-                <span>▤</span>
-                Publications
-            </button>
-
-
-            <button
-                class="menu-link"
-                onclick="navigate('artifacts')"
-            >
-                <span>◇</span>
-                Artifacts
-            </button>
-
-
-            <button
-                class="menu-link"
-                onclick="navigate('timeline')"
-            >
-                <span>□</span>
-                Timeline
-            </button>
-
-
-            <button
-                class="menu-link"
-                onclick="navigate('notifications')"
-            >
-                <span>♧</span>
-                Notifications
-            </button>
-
-
-            <button
-                class="menu-link"
-                onclick="navigate('kairos')"
-            >
-                <span>◎</span>
-                KAIROS
-            </button>
-
-
-            <button
-                class="menu-link"
-                onclick="navigate('profile')"
-            >
-                <span>♙</span>
-                Profile
-            </button>
-
-        </div>
-
-
-
-        <!-- ARCHIVE -->
-
-        <div class="menu-section archive-menu">
-
-            <div class="menu-section-label">
-                ARCHIVE
-            </div>
-
-
-            <button
-                class="menu-link"
-                onclick="navigate('about')"
-            >
-                <span>ⓘ</span>
-                About Aurora
-            </button>
-
-
-            <button
-                class="menu-link"
-                onclick="navigate('system')"
-            >
-                <span>⊙</span>
-                System Information
-            </button>
-
-
-            <button
-                class="menu-link"
-                onclick="navigate('clearance')"
-            >
-                <span>♙</span>
-                Clearance
-            </button>
-
-
-            <button
-                class="menu-link"
-                onclick="navigate('settings')"
-            >
-                <span>⚙</span>
-                Settings
-            </button>
-
-        </div>
-
-
-
-        <div class="menu-footer">
-
-            <p>
-                “Not just a project.
-                <br>
-                A connection.”
-            </p>
-
-        </div>
-
-    </aside>
-
-</div>
-
-
-
-<!-- =========================================================
-     ARTIFACT DETAIL MODAL
-========================================================= -->
-
-<div
-    id="artifact-modal"
-    class="modal-overlay"
->
-
-    <div class="artifact-modal">
-
-
-        <button
-            class="modal-close"
-            onclick="closeArtifact()"
-        >
-            ×
-        </button>
-
-
-        <div
-            id="artifact-modal-image"
-            class="modal-artifact-image"
-        ></div>
-
-
-        <div class="modal-artifact-content">
-
-            <div
-                id="artifact-modal-number"
-                class="page-eyebrow"
-            >
-                ARTIFACT 001
-            </div>
-
-
-            <h2 id="artifact-modal-title">
-                THE ORB
-            </h2>
-
-
-            <p id="artifact-modal-description">
-                A strange object recovered
-                from the first signal.
-            </p>
-
-
-            <div class="modal-meta">
-
-                <span>
-                    STATUS
-                </span>
-
-                <strong>
-                    CATALOGUED
-                </strong>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- =========================================================
-     NOTIFICATION DETAIL MODAL
-========================================================= -->
-
-<div
-    id="notification-modal"
-    class="modal-overlay"
->
-
-    <div class="notification-modal">
-
-
-        <button
-            class="modal-close"
-            onclick="closeNotification()"
-        >
-            ×
-        </button>
-
-
-        <div class="page-eyebrow">
-            TRANSMISSION
-        </div>
-
-
-        <h2 id="notification-modal-title">
-            New transmission
-        </h2>
-
-
-        <p id="notification-modal-text">
-            A new signal is available.
-        </p>
-
-
-        <button
-            class="outline-button"
-            onclick="closeNotification()"
-        >
-            CLOSE
-            <span>→</span>
-        </button>
-
-    </div>
-
-</div>
-
-
-
-<!-- =========================================================
-     SCRIPT
-========================================================= -->
-
-<script src="script.js"></script>
+    <script src="global.js"></script>
 
 </body>
 </html>
