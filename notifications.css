@@ -1,1 +1,480 @@
 
+/* =========================================================
+   PROJECT AURORA — NOTIFICATIONS
+   Cinematic / Glass / Editorial UI
+========================================================= */
+
+.notifications-page {
+  min-height: 100vh;
+  padding-bottom: calc(105px + env(safe-area-inset-bottom));
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   ATMOSPHERE
+========================================================= */
+
+.notifications-page .page-atmosphere {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(
+      circle at 75% 8%,
+      rgba(66, 160, 180, 0.13),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 15% 55%,
+      rgba(20, 82, 105, 0.12),
+      transparent 38%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(3, 14, 21, 0.2),
+      rgba(2, 8, 13, 0.9)
+    );
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.notifications-main {
+  width: min(100% - 36px, 720px);
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.notifications-intro {
+  padding-top: 108px;
+  padding-bottom: 54px;
+}
+
+.section-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 18px;
+
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: var(--aurora-cyan);
+}
+
+.kicker-line {
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.7;
+}
+
+.notifications-title {
+  margin: 0;
+
+  font-family: var(--serif);
+  font-size: clamp(52px, 15vw, 88px);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+
+  color: var(--aurora-white);
+}
+
+.notifications-description {
+  max-width: 440px;
+  margin: 25px 0 0;
+
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.45;
+  color: rgba(235, 245, 248, 0.62);
+}
+
+.notification-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 27px;
+
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: rgba(220, 235, 240, 0.42);
+}
+
+.status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--aurora-active);
+  box-shadow: 0 0 12px rgba(90, 220, 190, 0.7);
+}
+
+
+/* =========================================================
+   FEED
+========================================================= */
+
+.notification-feed {
+  position: relative;
+}
+
+.notification-group {
+  margin-bottom: 58px;
+}
+
+.notification-date {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-bottom: 18px;
+
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: rgba(220, 235, 240, 0.38);
+}
+
+.notification-date-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(220, 235, 240, 0.09);
+}
+
+
+/* =========================================================
+   NOTIFICATION CARD
+========================================================= */
+
+.notification-card {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 16px;
+
+  padding: 21px 18px 22px;
+
+  margin-bottom: 10px;
+
+  border: 1px solid rgba(190, 225, 235, 0.08);
+  border-radius: 2px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(24, 48, 59, 0.42),
+      rgba(5, 17, 24, 0.55)
+    );
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  transition:
+    border-color 220ms ease,
+    background 220ms ease,
+    transform 220ms ease;
+}
+
+.notification-card:hover {
+  border-color: rgba(120, 200, 215, 0.18);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(28, 57, 68, 0.5),
+      rgba(6, 19, 27, 0.62)
+    );
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MARKER
+========================================================= */
+
+.notification-marker {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+
+  padding-top: 4px;
+}
+
+.notification-marker::after {
+  content: "";
+
+  position: absolute;
+  top: 13px;
+  left: 50%;
+
+  width: 1px;
+  height: calc(100% + 32px);
+
+  background: rgba(150, 205, 215, 0.09);
+
+  transform: translateX(-50%);
+}
+
+.notification-group
+.notification-card:last-child
+.notification-marker::after {
+  display: none;
+}
+
+.notification-marker span {
+  position: relative;
+  z-index: 2;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: rgba(190, 215, 220, 0.28);
+}
+
+.notification-card.unread .notification-marker span {
+  background: var(--aurora-active);
+
+  box-shadow:
+    0 0 0 3px rgba(90, 220, 190, 0.08),
+    0 0 15px rgba(90, 220, 190, 0.55);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.notification-content {
+  min-width: 0;
+}
+
+.notification-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 9px;
+}
+
+.notification-type {
+  font-family: var(--sans);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--aurora-cyan);
+}
+
+.notification-top time {
+  font-family: var(--sans);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: rgba(220, 235, 240, 0.32);
+}
+
+.notification-content h2 {
+  margin: 0;
+
+  font-family: var(--serif);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+
+  color: rgba(245, 249, 250, 0.94);
+}
+
+.notification-content p {
+  margin: 10px 0 0;
+
+  max-width: 520px;
+
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.7;
+
+  color: rgba(220, 235, 240, 0.48);
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.notification-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 17px;
+
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+
+  color: rgba(220, 240, 242, 0.62);
+
+  text-decoration: none;
+
+  transition:
+    color 180ms ease,
+    gap 180ms ease;
+}
+
+.notification-action span {
+  font-size: 14px;
+  line-height: 0;
+}
+
+.notification-action:hover {
+  color: var(--aurora-white);
+  gap: 14px;
+}
+
+
+/* =========================================================
+   END NOTE
+========================================================= */
+
+.notifications-end {
+  padding: 20px 0 55px;
+
+  text-align: center;
+}
+
+.end-line {
+  display: block;
+
+  width: 1px;
+  height: 55px;
+
+  margin: 0 auto 25px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(150, 210, 220, 0),
+    rgba(150, 210, 220, 0.3),
+    rgba(150, 210, 220, 0)
+  );
+}
+
+.notifications-end p {
+  margin: 0;
+
+  font-family: var(--serif);
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.55;
+
+  color: rgba(230, 240, 243, 0.35);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .notifications-main {
+    width: min(100% - 28px, 720px);
+  }
+
+  .notifications-intro {
+    padding-top: 96px;
+    padding-bottom: 44px;
+  }
+
+  .notifications-title {
+    font-size: clamp(50px, 16vw, 72px);
+  }
+
+  .notifications-description {
+    font-size: 17px;
+    max-width: 330px;
+  }
+
+  .notification-card {
+    grid-template-columns: 15px 1fr;
+    gap: 13px;
+
+    padding: 18px 14px 19px;
+  }
+
+  .notification-content h2 {
+    font-size: 22px;
+  }
+
+  .notification-content p {
+    font-size: 11px;
+    line-height: 1.65;
+  }
+
+  .notification-group {
+    margin-bottom: 46px;
+  }
+}
+
+
+/* =========================================================
+   LARGE SCREENS
+========================================================= */
+
+@media (min-width: 768px) {
+
+  .notifications-main {
+    width: min(100% - 64px, 760px);
+  }
+
+  .notifications-intro {
+    padding-top: 135px;
+    padding-bottom: 70px;
+  }
+
+  .notification-card {
+    padding: 24px 24px 25px;
+  }
+
+  .notification-content h2 {
+    font-size: 29px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .notification-card,
+  .notification-action {
+    transition: none;
+  }
+
+  .notification-card:hover {
+    transform: none;
+  }
+
+}
