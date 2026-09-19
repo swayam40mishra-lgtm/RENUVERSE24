@@ -2985,3 +2985,65 @@ img.image-missing {
   }
 
 }
+/* MODULE UNLOCK STATES */
+
+.module-lock.is-unlocked {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.module-unlocked .module-lock {
+  display: none;
+}
+
+.module-unlocked .aurora-action,
+.aurora-action.is-enabled {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.timeline-day.available {
+  opacity: 1;
+}
+
+.timeline-day.locked {
+  opacity: 0.42;
+}
+
+.timeline-day.active {
+  opacity: 1;
+}
+
+.timeline-day.active .timeline-dot {
+  box-shadow:
+    0 0 0 4px rgba(119,229,208,0.08),
+    0 0 18px rgba(119,229,208,0.55);
+}
+
+.access-denied {
+  animation: accessDenied 0.45s ease;
+}
+
+@keyframes accessDenied {
+  0%, 100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-4px);
+  }
+
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+.site-lock.is-unlocked {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
