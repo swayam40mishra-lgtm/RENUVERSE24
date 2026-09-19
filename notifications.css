@@ -968,5 +968,394 @@ a.active
   .notification-card {
     transition: none !important;
   }
+/* =========================================================
+   AURORA NAVIGATION — FINAL OVERRIDE
+   Fixes raw/default menu + bottom navigation rendering
+   ========================================================= */
 
+/* ---------- MENU BACKDROP ---------- */
+
+.aurora-menu-backdrop {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 90 !important;
+
+  background: rgba(1, 6, 12, 0.72);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+}
+
+.aurora-menu-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+/* ---------- SLIDE-OUT MENU ---------- */
+
+.aurora-menu {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+
+  width: min(86vw, 360px) !important;
+  height: 100dvh !important;
+
+  z-index: 100 !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  padding:
+    max(28px, env(safe-area-inset-top))
+    24px
+    max(28px, env(safe-area-inset-bottom)) !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 17, 27, 0.98),
+      rgba(2, 8, 15, 0.99)
+    ) !important;
+
+  border-left: 1px solid rgba(119, 229, 208, 0.13);
+
+  box-shadow:
+    -24px 0 70px rgba(0, 0, 0, 0.42),
+    inset 1px 0 rgba(255, 255, 255, 0.025);
+
+  transform: translateX(105%) !important;
+  transition: transform 0.42s cubic-bezier(.22,.61,.36,1);
+
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.aurora-menu.is-open {
+  transform: translateX(0) !important;
+}
+
+
+/* ---------- MENU HEADER ---------- */
+
+.aurora-menu-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  min-height: 48px;
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid rgba(130, 170, 198, 0.12);
+}
+
+.aurora-menu-title {
+  margin: 0 !important;
+
+  font-family: var(--sans, Inter, sans-serif);
+  font-size: 10px !important;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+
+  color: rgba(173, 200, 220, 0.68);
+}
+
+
+/* ---------- MENU CLOSE ---------- */
+
+.aurora-menu-close {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+
+  width: 38px !important;
+  height: 38px !important;
+
+  display: grid !important;
+  place-items: center !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  border: 1px solid rgba(150, 190, 215, 0.16) !important;
+  border-radius: 50% !important;
+
+  background: rgba(255, 255, 255, 0.025) !important;
+
+  color: rgba(210, 225, 236, 0.72) !important;
+
+  font-family: var(--sans, Inter, sans-serif) !important;
+  font-size: 22px !important;
+  line-height: 1 !important;
+
+  cursor: pointer;
+}
+
+.aurora-menu-close:hover {
+  border-color: rgba(119, 229, 208, 0.38) !important;
+  color: #77e5d0 !important;
+}
+
+
+/* ---------- MENU LINKS ---------- */
+
+.aurora-menu nav,
+.aurora-menu-links {
+  display: flex !important;
+  flex-direction: column !important;
+
+  margin-top: 28px;
+}
+
+.aurora-menu a {
+  display: flex !important;
+  align-items: center !important;
+
+  width: 100% !important;
+  min-height: 48px !important;
+
+  padding: 0 4px !important;
+  margin: 0 !important;
+
+  border: 0 !important;
+  border-bottom: 1px solid rgba(125, 165, 190, 0.08) !important;
+
+  background: transparent !important;
+
+  color: rgba(187, 204, 218, 0.72) !important;
+
+  font-family: var(--sans, Inter, sans-serif) !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.18em !important;
+  line-height: 1.2 !important;
+  text-transform: uppercase !important;
+
+  text-decoration: none !important;
+
+  transition:
+    color 0.2s ease,
+    padding-left 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.aurora-menu a:hover,
+.aurora-menu a:focus-visible,
+.aurora-menu a.active {
+  color: #77e5d0 !important;
+  padding-left: 9px !important;
+  border-bottom-color: rgba(119, 229, 208, 0.2) !important;
+}
+
+
+/* ---------- EXTERNAL LINKS ---------- */
+
+.aurora-menu a[target="_blank"]::after {
+  content: "↗";
+
+  margin-left: auto;
+
+  color: rgba(119, 229, 208, 0.58);
+  font-size: 13px;
+}
+
+
+/* ---------- MENU SECTION LABEL ---------- */
+
+.aurora-menu-label {
+  margin-top: 30px !important;
+  margin-bottom: 8px !important;
+
+  font-family: var(--sans, Inter, sans-serif) !important;
+  font-size: 8px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.28em !important;
+  text-transform: uppercase !important;
+
+  color: rgba(119, 156, 180, 0.46) !important;
+}
+
+
+/* ---------- BOTTOM NAV ---------- */
+
+.aurora-bottom-nav {
+  position: fixed !important;
+
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+
+  width: 100% !important;
+
+  z-index: 80 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-around !important;
+
+  height: calc(68px + env(safe-area-inset-bottom)) !important;
+
+  padding:
+    0
+    8px
+    env(safe-area-inset-bottom) !important;
+
+  box-sizing: border-box !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(3, 10, 17, 0.86),
+      rgba(2, 7, 12, 0.97)
+    ) !important;
+
+  border-top: 1px solid rgba(130, 175, 202, 0.13);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 -15px 45px rgba(0, 0, 0, 0.24);
+}
+
+.aurora-bottom-nav a {
+  position: relative !important;
+
+  flex: 1 1 0 !important;
+
+  min-width: 0 !important;
+  height: 100% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 4px !important;
+  margin: 0 !important;
+
+  color: rgba(145, 169, 188, 0.58) !important;
+
+  background: transparent !important;
+  border: 0 !important;
+
+  font-family: var(--sans, Inter, sans-serif) !important;
+  font-size: 8px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.15em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+
+  text-decoration: none !important;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.aurora-bottom-nav a:hover,
+.aurora-bottom-nav a:focus-visible,
+.aurora-bottom-nav a.active {
+  color: #77e5d0 !important;
+}
+
+
+/* ACTIVE INDICATOR */
+
+.aurora-bottom-nav a.active::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 24px;
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background: #77e5d0;
+
+  box-shadow:
+    0 0 12px rgba(119, 229, 208, 0.65);
+}
+
+
+/* ---------- NOTIFICATION DOT ---------- */
+
+.nav-notification-dot {
+  position: absolute !important;
+
+  top: 16px;
+  right: calc(50% - 24px);
+
+  width: 5px !important;
+  height: 5px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  border-radius: 50% !important;
+
+  background: #77e5d0 !important;
+
+  box-shadow:
+    0 0 8px rgba(119, 229, 208, 0.7);
+}
+
+
+/* ---------- PAGE CONTENT SAFETY ---------- */
+
+.notifications-page {
+  padding-bottom: 92px !important;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 430px) {
+
+  .aurora-menu {
+    width: min(88vw, 350px) !important;
+  }
+
+  .aurora-menu a {
+    min-height: 50px !important;
+    font-size: 10px !important;
+  }
+
+  .aurora-bottom-nav {
+    height: calc(66px + env(safe-area-inset-bottom)) !important;
+  }
+
+  .aurora-bottom-nav a {
+    font-size: 7px !important;
+    letter-spacing: 0.12em !important;
+  }
+}
+
+
+/* ---------- REDUCED MOTION ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .aurora-menu,
+  .aurora-menu-backdrop,
+  .aurora-menu a,
+  .aurora-bottom-nav a {
+    transition: none !important;
+  }
+}
 }
