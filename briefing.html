@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#02080f"
+  >
+
+  <meta
+    name="description"
+    content="Project Aurora — Daily Mission Briefings."
+  >
+
+  <title>Briefing Room — Project Aurora</title>
+
+  <!-- Aurora Core -->
+  <link rel="stylesheet" href="global.css">
+
+  <!-- Briefing Room -->
+  <link rel="stylesheet" href="briefing.css">
+</head>
+
+<body class="page briefing-page">
+
+  <!-- =====================================================
+       BACKGROUND
+       ===================================================== -->
+
+  <div class="briefing-background" aria-hidden="true">
+    <div class="briefing-glow"></div>
+    <div class="briefing-grid"></div>
+    <div class="briefing-vignette"></div>
+  </div>
+
+
+  <!-- =====================================================
+       MAIN
+       ===================================================== -->
+
+  <main class="aurora-briefing">
+
+    <!-- ===================================================
+         HEADER
+         =================================================== -->
+
+    <header class="aurora-header briefing-header">
+
+      <a
+        href="index.html"
+        class="aurora-brand"
+        aria-label="Return to Project Aurora headquarters"
+      >
+        <span class="aurora-brand-main">
+          PROJECT AURORA
+        </span>
+
+        <span class="aurora-brand-sub">
+          BRIEFING ROOM
+        </span>
+      </a>
+
+
+      <div class="aurora-header-right">
+
+        <div class="aurora-header-member">
+          <span>OFFICIAL MEMBER</span>
+
+          <img
+            src="assets/images/muskan.jpg"
+            alt="Aurora member"
+            class="aurora-avatar"
+          >
+        </div>
+
+        <button
+          class="aurora-menu-button"
+          id="menuButton"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="auroraMenu"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- ===================================================
+         HERO
+         =================================================== -->
+
+    <section class="briefing-hero">
+
+      <div class="briefing-eyebrow">
+        HEADQUARTERS / CLASSIFIED ARCHIVE
+      </div>
+
+      <h1>
+        DAILY MISSION<br>
+        <em>BRIEFINGS</em>
+      </h1>
+
+      <p class="briefing-intro">
+        Every day, another fragment of Aurora becomes visible.
+        These briefings preserve what was discovered,
+        transmitted, and left behind.
+      </p>
+
+      <div class="briefing-status-row">
+
+        <span class="status-indicator"></span>
+
+        <span>
+          ARCHIVE STATUS
+        </span>
+
+        <strong id="briefingArchiveStatus">
+          01 / 08 ACTIVE
+        </strong>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         CURRENT BRIEFING
+         =================================================== -->
+
+    <section class="briefing-current-section">
+
+      <div class="section-label">
+        CURRENT TRANSMISSION
+      </div>
+
+
+      <article
+        class="briefing-feature"
+        data-briefing-day="1"
+        data-release="2026-09-19T00:00:00"
+      >
+
+        <div class="briefing-feature-top">
+
+          <div class="briefing-index">
+            BRIEFING // 001
+          </div>
+
+          <div class="briefing-state" id="currentBriefingState">
+            PDF AVAILABLE
+          </div>
+
+        </div>
+
+
+        <div class="briefing-feature-main">
+
+          <div class="briefing-document-mark">
+            <span>01</span>
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+
+
+          <div class="briefing-feature-copy">
+
+            <div class="briefing-date">
+              19 SEPTEMBER 2026
+            </div>
+
+            <h2>
+              THE FIRST SIGNAL
+            </h2>
+
+            <p>
+              The first transmission has entered the Aurora archive.
+              What appeared to be an ordinary beginning was only
+              the first visible fragment of something larger.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="briefing-feature-bottom">
+
+          <div class="briefing-meta">
+
+            <span>
+              CLASSIFICATION
+            </span>
+
+            <strong>
+              AURORA / LEVEL 01
+            </strong>
+
+          </div>
+
+
+          <a
+            href="assets/briefings/briefing-001.pdf"
+            class="aurora-action briefing-open-action"
+            id="currentBriefingAction"
+            target="_blank"
+            rel="noopener"
+          >
+            <span>OPEN BRIEFING</span>
+            <span class="aurora-arrow">→</span>
+          </a>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- ===================================================
+         ARCHIVE
+         =================================================== -->
+
+    <section class="briefing-archive">
+
+      <div class="briefing-archive-heading">
+
+        <div>
+          <span class="section-label">
+            ARCHIVE
+          </span>
+
+          <h2>
+            MISSION RECORDS
+          </h2>
+        </div>
+
+        <span class="archive-count" id="archiveCount">
+          01 / 08
+        </span>
+
+      </div>
+
+
+      <!-- =================================================
+           BRIEFING 001
+           ================================================= -->
+
+      <article
+        class="briefing-card briefing-card-available"
+        data-briefing-day="1"
+        data-release="2026-09-19T00:00:00"
+      >
+
+        <div class="briefing-card-number">
+          001
+        </div>
+
+        <div class="briefing-card-content">
+
+          <div class="briefing-card-top">
+            <span>
+              19 SEP 2026
+            </span>
+
+            <span class="briefing-card-status">
+              AVAILABLE
+            </span>
+          </div>
+
+          <h3>
+            THE FIRST SIGNAL
+          </h3>
+
+          <p>
+            The Aurora system has been activated.
+          </p>
+
+        </div>
+
+        <a
+          href="assets/briefings/briefing-001.pdf"
+          target="_blank"
+          rel="noopener"
+          class="briefing-card-arrow"
+          aria-label="Open Briefing 001"
+        >
+          →
+        </a>
+
+      </article>
+
+
+      <!-- =================================================
+           BRIEFING 002
+           ================================================= -->
+
+      <article
+        class="briefing-card briefing-card-locked"
+        data-briefing-day="2"
+        data-release="2026-09-20T00:00:00"
+      >
+
+        <div class="briefing-card-number">
+          002
+        </div>
+
+        <div class="briefing-card-content">
+
+          <div class="briefing-card-top">
+            <span>
+              20 SEP 2026
+            </span>
+
+            <span class="briefing-card-status">
+              LOCKED
+            </span>
+          </div>
+
+          <h3>
+            THE ORIGIN
+          </h3>
+
+          <p>
+            The next transmission has not yet entered the archive.
+          </p>
+
+        </div>
+
+        <span class="briefing-card-lock">
+          ⟐
+        </span>
+
+      </article>
+
+
+      <!-- =================================================
+           BRIEFING 003
+           ================================================= -->
+
+      <article
+        class="briefing-card briefing-card-locked"
+        data-briefing-day="3"
+        data-release="2026-09-21T00:00:00"
+      >
+
+        <div class="briefing-card-number">
+          003
+        </div>
+
+        <div class="briefing-card-content">
+
+          <div class="briefing-card-top">
+            <span>
+              21 SEP 2026
+            </span>
+
+            <span class="briefing-card-status">
+              LOCKED
+            </span>
+          </div>
+
+          <h3>
+            AURORA ORACLE
+          </h3>
+
+          <p>
+            A classified chapter awaits release.
+          </p>
+
+        </div>
+
+        <span class="briefing-card-lock">
+          ⟐
+        </span>
+
+      </article>
+
+
+      <!-- =================================================
+           BRIEFING 004
+           ================================================= -->
+
+      <article
+        class="briefing-card briefing-card-locked"
+        data-briefing-day="4"
+        data-release="2026-09-22T00:00:00"
+      >
+
+        <div class="briefing-card-number">
+          004
+        </div>
+
+        <div class="briefing-card-content">
+
+          <div class="briefing-card-top">
+            <span>
+              22 SEP 2026
+            </span>
+
+            <span class="briefing-card-status">
+              LOCKED
+            </span>
+          </div>
+
+          <h3>
+            BLACK AURORA STUDIOS
+          </h3>
+
+          <p>
+            The visual archive remains sealed.
+          </p>
+
+        </div>
+
+        <span class="briefing-card-lock">
+          ⟐
+        </span>
+
+      </article>
+
+
+      <!-- =================================================
+           BRIEFING 005
+           ================================================= -->
+
+      <article
+        class="briefing-card briefing-card-locked"
+        data-briefing-day="5"
+        data-release="2026-09-23T00:00:00"
+      >
+
+        <div class="briefing-card-number">
+          005
+        </div>
+
+        <div class="briefing-card-content">
+
+          <div class="briefing-card-top">
+            <span>
+              23 SEP 2026
+            </span>
+
+            <span class="briefing-card-status">
+              LOCKED
+            </span>
+          </div>
+
+          <h3>
+            THE CHRONICLE
+          </h3>
+
+          <p>
+            Words preserved beyond the moment.
+          </p>
+
+        </div>
+
+        <span class="briefing-card-lock">
+          ⟐
+        </span>
+
+      </article>
+
+
+      <!-- =================================================
+           BRIEFING 006
+           ================================================= -->
+
+      <article
+        class="briefing-card briefing-card-locked"
+        data-briefing-day="6"
+        data-release="2026-09-24T00:00:00"
+      >
+
+        <div class="briefing-card-number">
+          006
+        </div>
+
+        <div class="briefing-card-content">
+
+          <div class="briefing-card-top">
+            <span>
+              24 SEP 2026
+            </span>
+
+            <span class="briefing-card-status">
+              LOCKED
+            </span>
+          </div>
+
+          <h3>
+            FINAL SIGNAL
+          </h3>
+
+          <p>
+            The archive approaches its final transmission.
+          </p>
+
+        </div>
+
+        <span class="briefing-card-lock">
+          ⟐
+        </span>
+
+      </article>
+
+
+      <!-- =================================================
+           BRIEFING 007
+           ================================================= -->
+
+      <article
+        class="briefing-card briefing-card-locked"
+        data-briefing-day="7"
+        data-release="2026-09-25T00:00:00"
+      >
+
+        <div class="briefing-card-number">
+          007
+        </div>
+
+        <div class="briefing-card-content">
+
+          <div class="briefing-card-top">
+            <span>
+              25 SEP 2026
+            </span>
+
+            <span class="briefing-card-status">
+              LOCKED
+            </span>
+          </div>
+
+          <h3>
+            HOME-COMING
+          </h3>
+
+          <p>
+            Some journeys return to where they began.
+          </p>
+
+        </div>
+
+        <span class="briefing-card-lock">
+          ⟐
+        </span>
+
+      </article>
+
+
+      <!-- =================================================
+           BRIEFING 008
+           ================================================= -->
+
+      <article
+        class="briefing-card briefing-card-locked"
+        data-briefing-day="8"
+        data-release="2026-09-26T00:00:00"
+      >
+
+        <div class="briefing-card-number">
+          008
+        </div>
+
+        <div class="briefing-card-content">
+
+          <div class="briefing-card-top">
+            <span>
+              CLASSIFIED
+            </span>
+
+            <span class="briefing-card-status">
+              SEALED
+            </span>
+          </div>
+
+          <h3>
+            UNDISCLOSED
+          </h3>
+
+          <p>
+            The final record has not yet been written.
+          </p>
+
+        </div>
+
+        <span class="briefing-card-lock">
+          ⟐
+        </span>
+
+      </article>
+
+    </section>
+
+
+    <!-- ===================================================
+         ARCHIVE NOTE
+         =================================================== -->
+
+    <section class="briefing-note">
+
+      <span class="briefing-note-line"></span>
+
+      <div class="briefing-note-label">
+        PROJECT AURORA / ARCHIVE PROTOCOL
+      </div>
+
+      <p>
+        A briefing becomes available only when its corresponding
+        chapter enters the Aurora timeline.
+      </p>
+
+      <div class="briefing-note-date">
+        DAY 01 / 19 SEPTEMBER 2026
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         ENDING
+         =================================================== -->
+
+    <section class="briefing-ending">
+
+      <span>
+        PROJECT AURORA
+      </span>
+
+      <p>
+        The archive remembers what the world forgets.
+      </p>
+
+      <small>
+        DAILY MISSION BRIEFINGS
+      </small>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       NAVIGATION MENU
+       ===================================================== -->
+
+  <div
+    class="aurora-menu-backdrop"
+    id="menuBackdrop"
+    aria-hidden="true"
+  ></div>
+
+
+  <aside
+    class="aurora-menu"
+    id="auroraMenu"
+    aria-hidden="true"
+  >
+
+    <div class="aurora-menu-header">
+
+      <div class="aurora-menu-title">
+        PROJECT AURORA
+      </div>
+
+      <button
+        class="aurora-menu-close"
+        id="menuClose"
+        type="button"
+        aria-label="Close navigation menu"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <nav class="aurora-menu-links">
+
+      <a
+        href="index.html"
+        data-menu-link
+      >
+        HOME
+      </a>
+
+      <a
+        href="notifications.html"
+        data-menu-link
+      >
+        NOTIFICATIONS
+      </a>
+
+      <a
+        href="timeline.html"
+        data-menu-link
+      >
+        TIMELINE
+      </a>
+
+      <a
+        href="publications.html"
+        data-menu-link
+      >
+        PUBLICATIONS
+      </a>
+
+      <a
+        href="artifacts.html"
+        data-menu-link
+      >
+        ARTIFACTS
+      </a>
+
+      <a
+        href="briefing.html"
+        data-menu-link
+      >
+        BRIEFING ROOM
+      </a>
+
+      <a
+        href="profile.html"
+        data-menu-link
+      >
+        PROFILE
+      </a>
+
+    </nav>
+
+
+    <div class="aurora-menu-label">
+      EXTERNAL DESTINATIONS
+    </div>
+
+    <nav class="aurora-menu-links">
+
+      <a
+        href="https://example.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-menu-link
+      >
+        KAIROS
+      </a>
+
+      <a
+        href="https://example.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-menu-link
+      >
+        BLACK AURORA STUDIOS
+      </a>
+
+    </nav>
+
+  </aside>
+
+
+  <!-- =====================================================
+       BOTTOM NAVIGATION
+       ===================================================== -->
+
+  <nav
+    class="aurora-bottom-nav"
+    aria-label="Primary navigation"
+  >
+
+    <a
+      href="index.html"
+      data-nav
+    >
+      HOME
+    </a>
+
+    <a
+      href="notifications.html"
+      data-nav
+    >
+      NOTIFICATIONS
+      <span
+        class="nav-notification-dot"
+        aria-hidden="true"
+      ></span>
+    </a>
+
+    <a
+      href="https://example.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-nav
+    >
+      KAIROS
+    </a>
+
+    <a
+      href="profile.html"
+      data-nav
+    >
+      PROFILE
+    </a>
+
+  </nav>
+
+
+  <!-- =====================================================
+       SCRIPTS
+       ===================================================== -->
+
+  <script src="global.js"></script>
+  <script src="briefing.js"></script>
+
+</body>
+  </html>
