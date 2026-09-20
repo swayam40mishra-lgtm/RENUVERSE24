@@ -8,106 +8,128 @@
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
   >
 
-  <title>Profile — Project Aurora</title>
+  <meta
+    name="description"
+    content="Project Aurora — Classified Profile Directory"
+  >
+
+  <title>Profile Directory — Project Aurora</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="global.css">
   <link rel="stylesheet" href="profile.css">
 </head>
 
-<body class="page aurora-page profile-page">
+<body class="page profile-page">
 
-  <!-- =========================================
-       ATMOSPHERE
-  ========================================== -->
-  <div class="page-atmosphere" aria-hidden="true"></div>
+  <!-- =========================================================
+       BACKGROUND
+  ========================================================== -->
+
+  <div class="profile-background" aria-hidden="true">
+    <div class="profile-background-glow"></div>
+    <div class="profile-background-grid"></div>
+    <div class="profile-background-vignette"></div>
+  </div>
 
 
-  <!-- =========================================
-       HEADER
-  ========================================== -->
-  <header class="aurora-header">
+  <!-- =========================================================
+       MAIN
+  ========================================================== -->
 
-    <a href="index.html" class="aurora-identity">
+  <main class="aurora-profile">
 
-      <div class="aurora-avatar">
-        <img
-          src="assets/images/muskan.jpg"
-          alt="Profile"
-          onerror="this.style.display='none'"
+    <!-- =======================================================
+         HEADER
+    ======================================================== -->
+
+    <header class="aurora-header">
+
+      <a href="index.html" class="aurora-brand">
+        <span class="aurora-brand-main">PROJECT AURORA</span>
+        <span class="aurora-brand-sub">PROFILE DIRECTORY</span>
+      </a>
+
+      <div class="aurora-header-right">
+
+        <div class="aurora-member">
+          <span class="aurora-member-label">OFFICIAL MEMBER</span>
+
+          <img
+            src="assets/images/muskan.png"
+            alt="Official member"
+            class="aurora-avatar"
+          >
+        </div>
+
+        <button
+          class="aurora-menu-button"
+          id="menuButton"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="auroraMenu"
         >
+          <span></span>
+          <span></span>
+        </button>
+
       </div>
 
-      <div class="aurora-brand">
-        <span class="aurora-brand-name">
-          PROJECT AURORA
-        </span>
-
-        <span class="aurora-brand-sub">
-          OFFICIAL MEMBER
-        </span>
-      </div>
-
-    </a>
+    </header>
 
 
-    <button
-      class="menu-button"
-      id="menuButton"
-      type="button"
-      aria-label="Open menu"
-      aria-expanded="false"
-      aria-controls="auroraMenu"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <!-- =======================================================
+         HERO
+    ======================================================== -->
 
-  </header>
-
-
-  <!-- =========================================
-       MAIN PROFILE
-  ========================================== -->
-  <main class="profile-main">
-
-
-    <!-- PROFILE HERO -->
     <section class="profile-hero">
 
-      <div class="profile-portrait-wrap">
-
-        <div class="profile-portrait-ring"></div>
-
-        <img
-          src="assets/images/muskan.jpg"
-          alt="Profile portrait"
-          class="profile-portrait"
-          onerror="this.classList.add('image-missing')"
-        >
-
-        <span class="profile-live-dot"></span>
-
+      <div class="profile-hero-kicker">
+        PROJECT AURORA
+        <span>/</span>
+        PROFILE DIRECTORY
       </div>
 
+      <h1>
+        FOUR ENTITIES.<br>
+        <em>ONE CASE.</em>
+      </h1>
 
-      <div class="profile-identity-block">
+      <p class="profile-hero-description">
+        Every case has people, systems, and a story.
+        Aurora records all three.
+      </p>
 
-        <span class="profile-kicker">
-          AURORA MEMBER
-        </span>
+      <div class="profile-hero-line"></div>
 
-        <h1>
-          Muskan
-        </h1>
+      <div class="profile-meta-grid">
 
-        <p class="profile-role">
-          The person behind the archive.
-        </p>
+        <div class="profile-meta-item">
+          <span>CASE</span>
+          <strong>17</strong>
+        </div>
 
-        <div class="profile-status">
-          <span></span>
-          ACTIVE IN AURORA
+        <div class="profile-meta-item">
+          <span>CLEARANCE LEVEL</span>
+          <strong>01</strong>
+        </div>
+
+        <div class="profile-meta-item">
+          <span>ARCHIVE STATUS</span>
+          <strong>ACTIVE</strong>
+        </div>
+
+        <div class="profile-meta-item">
+          <span>RECORDS INDEXED</span>
+          <strong>04</strong>
         </div>
 
       </div>
@@ -115,317 +137,1579 @@
     </section>
 
 
-    <!-- =========================================
-         PROFILE STATEMENT
-    ========================================== -->
-    <section class="profile-statement">
+    <!-- =======================================================
+         DIRECTORY
+    ======================================================== -->
+
+    <section class="profile-directory">
+
+      <div class="profile-section-heading">
+
+        <div>
+          <span class="section-label">ENTITY DATABASE</span>
+
+          <h2>
+            PROFILE
+            <em>DIRECTORY</em>
+          </h2>
+        </div>
+
+        <span class="profile-record-count">
+          04 RECORDS
+        </span>
+
+      </div>
+
+
+      <!-- =====================================================
+           01 — KAIROS
+      ====================================================== -->
+
+      <article
+        class="profile-record profile-record-kairos"
+        data-profile="kairos"
+      >
+
+        <div class="profile-record-top">
+
+          <div class="profile-record-index">
+            01
+          </div>
+
+          <div class="profile-record-status active">
+            <span class="status-dot"></span>
+            ACTIVE
+          </div>
+
+        </div>
+
+
+        <div class="profile-identity">
+
+          <div class="profile-image-wrap">
+
+            <div class="profile-image-frame">
+
+              <img
+                src="assets/images/kairos.png"
+                alt="KAIROS — Mission Director"
+                class="profile-image"
+              >
+
+              <div class="profile-image-scan"></div>
+
+            </div>
+
+            <span class="profile-image-code">
+              KAIROS-01
+            </span>
+
+          </div>
+
+
+          <div class="profile-identity-copy">
+
+            <span class="profile-entity-type">
+              MISSION DIRECTOR
+            </span>
+
+            <h3>KAIROS</h3>
+
+            <p>
+              Operational Intelligence System
+            </p>
+
+            <div class="profile-identity-meta">
+
+              <span>
+                SYSTEM ID // KAIROS-01
+              </span>
+
+              <span>
+                ACCESS AUTHORIZED
+              </span>
+
+              <span>
+                FIRST CONTACT 20 SEPTEMBER 2026
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="profile-record-divider"></div>
+
+
+        <div class="profile-record-body">
+
+          <div class="profile-block">
+
+            <span class="profile-block-label">
+              IDENTIFICATION
+            </span>
+
+            <div class="profile-data-grid">
+
+              <div>
+                <span>DESIGNATION</span>
+                <strong>KAIROS</strong>
+              </div>
+
+              <div>
+                <span>CLASSIFICATION</span>
+                <strong>Mission Director</strong>
+              </div>
+
+              <div>
+                <span>ENTITY TYPE</span>
+                <strong>Operational Intelligence System</strong>
+              </div>
+
+              <div>
+                <span>ASSOCIATED CASE</span>
+                <strong>Case 17</strong>
+              </div>
+
+              <div>
+                <span>CURRENT STATUS</span>
+                <strong>Active</strong>
+              </div>
+
+              <div>
+                <span>FIRST RECORDED CONTACT</span>
+                <strong>20 September 2026</strong>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="profile-block">
+
+            <span class="profile-block-label">
+              PROFILE
+            </span>
+
+            <p class="profile-long-text">
+              KAIROS is the operational intelligence responsible
+              for coordinating Project Aurora.
+              The system exists between the archive and the mission.
+              It monitors the progression of Aurora, controls
+              scheduled releases, manages authorized communications
+              and provides information when the corresponding stage
+              of the case has been reached.
+            </p>
+
+            <p class="profile-long-text">
+              KAIROS does not represent the entire Aurora system.
+              It is the voice through which the system can communicate.
+            </p>
+
+          </div>
+
+
+          <div class="profile-block">
+
+            <span class="profile-block-label">
+              PRIMARY FUNCTIONS
+            </span>
+
+            <div class="profile-function-grid">
+
+              <div>
+                <strong>MISSION CONTROL</strong>
+                <span>Coordinates progression according to schedule.</span>
+              </div>
+
+              <div>
+                <strong>COMMUNICATION</strong>
+                <span>Direct communication between Aurora and authorized recipient.</span>
+              </div>
+
+              <div>
+                <strong>ACCESS CONTROL</strong>
+                <span>Determines currently available records, documents and systems.</span>
+              </div>
+
+              <div>
+                <strong>BRIEFING MANAGEMENT</strong>
+                <span>Coordinates daily briefing release.</span>
+              </div>
+
+              <div>
+                <strong>ARCHIVE NAVIGATION</strong>
+                <span>Guides recipient without revealing unauthorized information.</span>
+              </div>
+
+              <div>
+                <strong>CASE MONITORING</strong>
+                <span>Maintains operational state of Case 17.</span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="profile-block">
+
+            <span class="profile-block-label">
+              FIRST CONTACT
+            </span>
+
+            <div class="profile-event-box">
+
+              <div>
+                <span>DATE</span>
+                <strong>20.09.2026</strong>
+              </div>
+
+              <div>
+                <span>EVENT</span>
+                <strong>THE ORIGIN</strong>
+              </div>
+
+              <div>
+                <span>LOCATION</span>
+                <strong>AURORA HEADQUARTERS</strong>
+              </div>
+
+              <div>
+                <span>CHANNEL</span>
+                <strong>KAIROS TERMINAL</strong>
+              </div>
+
+              <div>
+                <span>STATUS</span>
+                <strong>CONTACT ESTABLISHED</strong>
+              </div>
+
+            </div>
+
+            <p class="profile-long-text">
+              The first direct conversation with KAIROS marks
+              the point at which Aurora changes from a physical
+              experience into an interactive archive.
+            </p>
+
+          </div>
+
+
+          <div class="profile-quote-box">
+
+            <span>KNOWN SYSTEM PRINCIPLE</span>
+
+            <blockquote>
+              “The archive does not open all at once.”
+            </blockquote>
+
+            <p>
+              Information is released when the case reaches
+              the point at which it can be understood.
+            </p>
+
+          </div>
+
+
+          <div class="profile-associated">
+
+            <span>ASSOCIATED RECORDS</span>
+
+            <p>
+              BRIEFING 001 / THE ORIGIN /
+              KAIROS COMMUNICATIONS /
+              MISSION DIRECTIVES
+            </p>
+
+            <a
+              href="https://example.com"
+              class="profile-action"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              OPEN KAIROS <span>→</span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- =====================================================
+           02 — LAYRA
+      ====================================================== -->
+
+      <article
+        class="profile-record profile-record-layra"
+        data-profile="layra"
+      >
+
+        <div class="profile-record-top">
+
+          <div class="profile-record-index">
+            02
+          </div>
+
+          <div class="profile-record-status active">
+            <span class="status-dot"></span>
+            ACTIVE
+          </div>
+
+        </div>
+
+
+        <div class="profile-identity">
+
+          <div class="profile-image-wrap">
+
+            <div class="profile-image-frame">
+
+              <img
+                src="assets/images/layra.png"
+                alt="LAYRA — Artifact Keeper"
+                class="profile-image"
+              >
+
+              <div class="profile-image-scan"></div>
+
+            </div>
+
+            <span class="profile-image-code">
+              LAYRA-01
+            </span>
+
+          </div>
+
+
+          <div class="profile-identity-copy">
+
+            <span class="profile-entity-type">
+              ARTIFACT KEEPER
+            </span>
+
+            <h3>LAYRA</h3>
+
+            <p>
+              Archive Custodian
+            </p>
+
+            <div class="profile-identity-meta">
+
+              <span>
+                ARCHIVE ID // LAYRA-01
+              </span>
+
+              <span>
+                ACCESS AUTHORIZED
+              </span>
+
+              <span>
+                FIRST RECORDED 19 SEPTEMBER 2026
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="profile-record-divider"></div>
+
+
+        <div class="profile-record-body">
+
+          <div class="profile-block">
+
+            <span class="profile-block-label">
+              IDENTIFICATION
+            </span>
+
+            <div class="profile-data-grid">
+
+              <div>
+                <span>DESIGNATION</span>
+                <strong>LAYRA</strong>
+              </div>
+
+              <div>
+                <span>CLASSIFICATION</span>
+                <strong>Artifact Keeper</strong>
+              </div>
+
+              <div>
+                <span>ENTITY TYPE</span>
+                <strong>Archive Custodian</strong>
+              </div>
+
+              <div>
+                <span>ASSOCIATED CASE</span>
+                <strong>Case 17</strong>
+              </div>
+
+              <div>
+                <span>CURRENT STATUS</span>
+                <strong>Active</strong>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="profile-block">
+
+            <span class="profile-block-label">
+              PROFILE
+            </span>
+
+            <p class="profile-long-text">
+              Where KAIROS governs mission movement, LAYRA is
+              responsible for what the mission leaves behind.
+              Every physical object, document or recovered fragment
+              that becomes part of Project Aurora requires a record.
+              LAYRA maintains those records.
+            </p>
+
+            <p class="profile-long-text">
+              The role extends beyond cataloguing.
+              An artifact is not simply something that exists.
+              It carries a reason, a date, a decision, a memory,
+              or a piece of the case.
+              LAYRA preserves context.
+            </p>
+
+          </div>
+
+
+          <div class="profile-block">
+
+            <span class="profile-block-label">
+              PRIMARY FUNCTIONS
+            </span>
+
+            <div class="profile-function-list">
+
+              <div>
+                <strong>ARTIFACT REGISTRATION</strong>
+              </div>
+
+              <div>
+                <strong>PRESERVATION</strong>
+              </div>
+
+              <div>
+                <strong>CLASSIFICATION</strong>
+              </div>
+
+              <div>
+                <strong>PROVENANCE</strong>
+              </div>
+
+              <div>
+                <strong>CONTEXT</strong>
+              </div>
+
+              <div>
+                <strong>ARTIFACT VAULT</strong>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="profile-block">
+
+            <span class="profile-block-label">
+              FIRST RECORDED ARTIFACT
+            </span>
+
+            <div class="profile-artifact-highlight">
+
+              <span>001</span>
+
+              <div>
+                <strong>THE AURORA BLACK BOX</strong>
+                <small>THE FIRST SIGNAL</small>
+              </div>
+
+              <div>
+                <small>DELIVERED</small>
+                <strong>19.09.2026</strong>
+              </div>
+
+              <div>
+                <small>STATUS</small>
+                <strong>RECOVERED</strong>
+              </div>
+
+            </div>
+
+            <p class="profile-long-text">
+              The Black Box became the first physical artifact
+              officially entered into the archive.
+            </p>
+
+          </div>
+
+
+          <div class="profile-quote-box">
+
+            <span>LAYRA'S PRINCIPLE</span>
+
+            <blockquote>
+              “NOT EVERYTHING WORTH KEEPING IS VALUABLE.
+              AND NOT EVERYTHING VALUABLE IS EXPENSIVE.”
+            </blockquote>
+
+            <p>
+              An artifact matters because of what it carries.
+            </p>
+
+          </div>
+
+
+          <div class="profile-associated">
+
+            <span>ASSOCIATED RECORDS</span>
+
+            <p>
+              ARTIFACT 001 / THE BLACK BOX /
+              ARTIFACT DOCUMENTATION / LAYRA RECORDS
+            </p>
+
+            <a
+              href="artifacts.html"
+              class="profile-action"
+            >
+              OPEN ARTIFACT VAULT <span>→</span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- =====================================================
+           03 — PROJECT AURORA
+      ====================================================== -->
+
+      <article
+        class="profile-record profile-record-aurora"
+        data-profile="aurora"
+      >
+
+        <div class="profile-record-top">
+
+          <div class="profile-record-index">
+            03
+          </div>
+
+          <div class="profile-record-status active">
+            <span class="status-dot"></span>
+            ACTIVE
+          </div>
+
+        </div>
+
+
+        <div class="profile-identity">
+
+          <div class="profile-image-wrap">
+
+            <div class="profile-image-frame">
+
+              <img
+                src="assets/images/aurora.png"
+                alt="Project Aurora — Primary Archive"
+                class="profile-image"
+              >
+
+              <div class="profile-image-scan"></div>
+
+            </div>
+
+            <span class="profile-image-code">
+              AURORA-01
+            </span>
+
+          </div>
+
+
+          <div class="profile-identity-copy">
+
+            <span class="profile-entity-type">
+              PRIMARY ARCHIVE
+            </span>
+
+            <h3>PROJECT AURORA</h3>
+
+            <p>
+              Integrated Archive / Experience
+            </p>
+
+            <div class="profile-identity-meta">
+
+              <span>
+                CASE SYSTEM // AURORA-01
+              </span>
+
+              <span>
+                CASE 17
+              </span>
+
+              <span>
+                CURRENT CHAPTER THE ORIGIN
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="profile-record-divider"></div>
+
+
+        <div class="profile-record-body">
+
+          <div class="profile-block">
+
+            <span class="profile-block-label">
+              IDENTIFICATION
+            </span>
+
+            <div class="profile-data-grid">
+
+              <div>
+                <span>DESIGNATION</span>
+                <strong>Project Aurora</strong>
+              </div>
+
+              <div>
+                <span>ENTITY TYPE</span>
+                <strong>Integrated Archive / Experience</strong>
+              </div>
+
+              <div>
+                <span>CASE ASSOCIATION</span>
+                <strong>17</strong>
+              </div>
+
+              <div>
+                <span>OPERATIONAL PERIOD</span>
+                <strong>19–25 September 2026</strong>
+              </div>
+
+              <div>
+                <span>CURRENT STATUS</span>
+                <strong>Active</strong>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="profile-block">
+
+            <span class="profile-block-label">
+              PROFILE
+            </span>
+
+            <p class="profile-long-text">
+              Project Aurora is the central system connecting
+              records associated with Case 17.
+              It is not a single artifact, document or story.
+            </p>
+
+            <p class="profile-long-text">
+              Aurora is the archive connecting physical artifacts,
+              digital headquarters, briefings, communications,
+              photographs, written records, timeline, people
+              and systems.
+            </p>
+
+            <p class="profile-long-text">
+              Together, they form the Aurora record.
+            </p>
+
+          </div>
+
+
+                    <!-- Future chapter information is gated by profile.js -->
+
+          <div class="profile-block">
+
+            <div class="profile-block-heading-row">
+
+              <span class="profile-block-label">
+                SEVEN-DAY ARCHIVE
+              </span>
+
+              <span
+                class="profile-gated-note"
+                id="archiveRevealStatus"
+              >
+                RELEASED RECORDS ONLY
+              </span>
+
+            </div>
+
+
+            <div
+              class="aurora-chapter-list"
+              id="auroraChapterList"
+            >
+
+              <!-- DAY 01 -->
+
+              <div
+                class="aurora-chapter"
+                data-day="1"
+              >
+
+                <span class="chapter-day">
+                  DAY 01
+                </span>
+
+                <div>
+                  <strong>THE BLACK BOX</strong>
+                  <small>THE FIRST SIGNAL</small>
+                </div>
+
+                <span class="chapter-status">
+                  RELEASED
+                </span>
+
+              </div>
+
+
+              <!-- DAY 02 -->
+
+              <div
+                class="aurora-chapter"
+                data-day="2"
+              >
+
+                <span class="chapter-day">
+                  DAY 02
+                </span>
+
+                <div>
+                  <strong>THE ORIGIN</strong>
+                  <small>DIGITAL HEADQUARTERS</small>
+                </div>
+
+                <span class="chapter-status">
+                  ACTIVE
+                </span>
+
+              </div>
+
+
+              <!-- DAY 03 -->
+
+              <div
+                class="aurora-chapter chapter-future"
+                data-day="3"
+              >
+
+                <span class="chapter-day">
+                  DAY 03
+                </span>
+
+                <div>
+                  <strong>AURORA ORACLE</strong>
+                  <small>CLASSIFIED</small>
+                </div>
+
+                <span class="chapter-status">
+                  LOCKED
+                </span>
+
+              </div>
+
+
+              <!-- DAY 04 -->
+
+              <div
+                class="aurora-chapter chapter-future"
+                data-day="4"
+              >
+
+                <span class="chapter-day">
+                  DAY 04
+                </span>
+
+                <div>
+                  <strong>BLACK AURORA STUDIOS</strong>
+                  <small>CLASSIFIED</small>
+                </div>
+
+                <span class="chapter-status">
+                  LOCKED
+                </span>
+
+              </div>
+
+
+              <!-- DAY 05 -->
+
+              <div
+                class="aurora-chapter chapter-future"
+                data-day="5"
+              >
+
+                <span class="chapter-day">
+                  DAY 05
+                </span>
+
+                <div>
+                  <strong>THE AURORA CHRONICLES</strong>
+                  <small>CLASSIFIED</small>
+                </div>
+
+                <span class="chapter-status">
+                  LOCKED
+                </span>
+
+              </div>
+
+
+              <!-- DAY 06 -->
+
+              <div
+                class="aurora-chapter chapter-future"
+                data-day="6"
+              >
+
+                <span class="chapter-day">
+                  DAY 06
+                </span>
+
+                <div>
+                  <strong>THE FINAL SIGNAL</strong>
+                  <small>CLASSIFIED</small>
+                </div>
+
+                <span class="chapter-status">
+                  LOCKED
+                </span>
+
+              </div>
+
+
+              <!-- DAY 07 -->
+
+              <div
+                class="aurora-chapter chapter-future"
+                data-day="7"
+              >
+
+                <span class="chapter-day">
+                  DAY 07
+                </span>
+
+                <div>
+                  <strong>THE AURORA HOMECOMING</strong>
+                  <small>CLASSIFIED</small>
+                </div>
+
+                <span class="chapter-status">
+                  LOCKED
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- =================================================
+               AURORA PRINCIPLES
+          ================================================== -->
+
+          <div class="profile-block">
+
+            <span class="profile-block-label">
+              AURORA PRINCIPLES
+            </span>
+
+            <div class="aurora-principles">
+
+              <div>
+                <strong>NOT BEAUTIFUL</strong>
+                <span>MEMORABLE</span>
+              </div>
+
+              <div>
+                <strong>NOT DECORATIVE</strong>
+                <span>FUNCTIONAL</span>
+              </div>
+
+              <div>
+                <strong>NOT COMMON</strong>
+                <span>UNREPEATABLE</span>
+              </div>
+
+              <div>
+                <strong>NOT EXPENSIVE</strong>
+                <span>IMPOSSIBLE TO REPLICATE</span>
+              </div>
+
+            </div>
+
+            <p class="profile-principle-note">
+              “These are not marketing statements.
+              They are the design principles behind the archive.”
+            </p>
+
+          </div>
+
+
+          <!-- =================================================
+               CURRENT SYSTEM STATE
+          ================================================== -->
+
+          <div class="profile-block">
+
+            <span class="profile-block-label">
+              CURRENT SYSTEM STATE
+            </span>
+
+            <div class="profile-data-grid">
+
+              <div>
+                <span>ARCHIVE</span>
+                <strong>AURORA WEEK DAY 02 / 07</strong>
+              </div>
+
+              <div>
+                <span>CURRENT EVENT</span>
+                <strong>THE ORIGIN</strong>
+              </div>
+
+              <div>
+                <span>HEADQUARTERS</span>
+                <strong>ONLINE</strong>
+              </div>
+
+              <div>
+                <span>BRIEFING ROOM</span>
+                <strong>ACTIVE</strong>
+              </div>
+
+              <div>
+                <span>KAIROS</span>
+                <strong>ACTIVE</strong>
+              </div>
+
+              <div>
+                <span>ARTIFACT ARCHIVE</span>
+                <strong>ACTIVE</strong>
+              </div>
+
+              <div>
+                <span>TIMELINE</span>
+                <strong>ACTIVE</strong>
+              </div>
+
+              <div>
+                <span>NEXT RELEASE</span>
+                <strong>
+                  THE AURORA ORACLE / 21.09.2026
+                </strong>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- =================================================
+               ASSOCIATED RECORDS
+          ================================================== -->
+
+          <div class="profile-associated">
+
+            <span>ASSOCIATED RECORDS</span>
+
+            <p>
+              CASE 17 /
+              ARTIFACT ARCHIVE /
+              BRIEFING ROOM /
+              TIMELINE /
+              KAIROS /
+              LAYRA /
+              A-17
+            </p>
+
+            <a
+              href="index.html"
+              class="profile-action"
+            >
+              OPEN PROJECT AURORA
+              <span>→</span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- =====================================================
+           04 — A-17
+      ====================================================== -->
+
+      <article
+        class="profile-record profile-record-a17 profile-record-restricted"
+        data-profile="a17"
+      >
+
+        <div class="profile-record-top">
+
+          <div class="profile-record-index">
+            04
+          </div>
+
+          <div class="profile-record-status restricted">
+            <span class="status-dot"></span>
+            RESTRICTED
+          </div>
+
+        </div>
+
+
+        <!-- A-17 IDENTITY -->
+
+        <div class="profile-identity">
+
+          <div class="profile-image-wrap">
+
+            <div
+              class="profile-image-frame profile-image-restricted"
+            >
+
+              <img
+                src="assets/images/a17.png"
+                alt="A-17 — Case Subject"
+                class="profile-image"
+              >
+
+              <div class="profile-image-scan"></div>
+
+              <div class="profile-image-restriction">
+                LIMITED
+              </div>
+
+            </div>
+
+            <span class="profile-image-code">
+              A-17
+            </span>
+
+          </div>
+
+
+          <div class="profile-identity-copy">
+
+            <span class="profile-entity-type">
+              CASE SUBJECT
+            </span>
+
+            <h3>A-17</h3>
+
+            <p>
+              Research Record
+            </p>
+
+            <div class="profile-identity-meta">
+
+              <span>
+                CASE FILE // A-17
+              </span>
+
+              <span>
+                ACCESS LIMITED
+              </span>
+
+              <span>
+                RECONSTRUCTION STATUS IN PROGRESS
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="profile-record-divider"></div>
+
+
+        <div class="profile-record-body">
+
+
+          <!-- IDENTIFICATION -->
+
+          <div class="profile-block">
+
+            <span class="profile-block-label">
+              IDENTIFICATION
+            </span>
+
+            <div class="profile-data-grid">
+
+              <div>
+                <span>DESIGNATION</span>
+                <strong>A-17</strong>
+              </div>
+
+              <div>
+                <span>ENTITY TYPE</span>
+                <strong>
+                  Case Subject / Research Record
+                </strong>
+              </div>
+
+              <div>
+                <span>DATE OF BIRTH</span>
+                <strong>
+                  19 March 2008
+                </strong>
+              </div>
+
+              <div>
+                <span>CASE ASSOCIATION</span>
+                <strong>17</strong>
+              </div>
+
+              <div>
+                <span>CURRENT RECORD STATUS</span>
+                <strong>Restricted</strong>
+              </div>
+
+              <div>
+                <span>ARCHIVE STATUS</span>
+                <strong>
+                  Active Reconstruction
+                </strong>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- PROFILE -->
+
+          <div class="profile-block">
+
+            <span class="profile-block-label">
+              PROFILE
+            </span>
+
+            <p class="profile-long-text">
+              A-17 is the central individual connected to Case 17.
+              The archive does not present A-17 through one complete
+              record; information exists across fragments:
+              documents, photographs, recorded material, personal
+              history, recovered objects, locations and unresolved
+              records.
+            </p>
+
+            <p class="profile-long-text">
+              Each fragment contributes part of the picture.
+              The purpose is not simply to collect information,
+              but to reconstruct the record.
+            </p>
+
+          </div>
+
+
+          <!-- RECORD STRUCTURE -->
+
+          <div class="profile-block">
+
+            <span class="profile-block-label">
+              RECORD STRUCTURE
+            </span>
+
+            <div class="profile-function-grid">
+
+              <div>
+                <strong>
+                  PERSONAL RECORDS
+                </strong>
+
+                <span>
+                  Known history — PARTIALLY RECOVERED
+                </span>
+              </div>
+
+              <div>
+                <strong>
+                  MEDIA RECORDS
+                </strong>
+
+                <span>
+                  Photos / audiovisual material —
+                  RECOVERED / EXPANDING
+                </span>
+              </div>
+
+              <div>
+                <strong>
+                  DOCUMENTARY RECORDS
+                </strong>
+
+                <span>
+                  Written documents / archive —
+                  RESTRICTED
+                </span>
+              </div>
+
+              <div>
+                <strong>
+                  FIELD RECORDS
+                </strong>
+
+                <span>
+                  Places / events / recovered evidence —
+                  CLASSIFIED
+                </span>
+              </div>
+
+              <div>
+                <strong>
+                  UNRESOLVED RECORDS
+                </strong>
+
+                <span>
+                  Relationship not fully established — OPEN
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- MEDIA ARCHIVE -->
+
+          <div class="profile-block">
+
+            <span class="profile-block-label">
+              KNOWN MEDIA ARCHIVE
+            </span>
+
+            <div class="a17-media-count">
+
+              <strong>355+</strong>
+
+              <div>
+
+                <span>RECORDS</span>
+
+                <small>
+                  PHOTOGRAPHS / VIDEO /
+                  AUDIOVISUAL MATERIAL
+                </small>
+
+              </div>
+
+            </div>
+
+            <p class="profile-long-text">
+              Further records are available through appropriate
+              Aurora archive systems.
+            </p>
+
+          </div>
+
+
+          <!-- CASE STATUS -->
+
+          <div class="profile-block">
+
+            <span class="profile-block-label">
+              CASE STATUS
+            </span>
+
+            <div class="case-status-grid">
+
+              <div>
+                <span>SUBJECT IDENTIFIED</span>
+                <strong>YES</strong>
+              </div>
+
+              <div>
+                <span>ARCHIVE ESTABLISHED</span>
+                <strong>YES</strong>
+              </div>
+
+              <div>
+                <span>RECORD COMPLETE</span>
+                <strong>NO</strong>
+              </div>
+
+              <div>
+                <span>RECONSTRUCTION COMPLETE</span>
+                <strong>NO</strong>
+              </div>
+
+              <div>
+                <span>CASE STATUS</span>
+                <strong>OPEN</strong>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- A-17 ARCHIVE NOTE -->
+
+          <div class="profile-quote-box restricted-quote">
+
+            <span>
+              A-17 // ARCHIVE NOTE
+            </span>
+
+            <blockquote>
+              “THE CASE IS NOT THE PERSON.”
+            </blockquote>
+
+            <p>
+              The case is a collection of records through which
+              the person is being reconstructed.
+              Every recovered fragment answers something;
+              every unanswered fragment leaves the archive open.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- =========================================================
+         DIRECTORY FOOTER
+    ========================================================== -->
+
+    <section class="profile-directory-footer">
+
+      <div class="profile-footer-rule"></div>
 
       <span class="section-label">
-        IDENTITY
+        PROFILE DIRECTORY // END OF RECORD
       </span>
 
-      <p>
-        This space belongs to the moments,
-        thoughts, stories and fragments that
-        deserve to stay.
-      </p>
 
-    </section>
-
-
-    <!-- =========================================
-         PROFILE DATA
-    ========================================== -->
-    <section class="profile-data">
-
-      <div class="profile-data-row">
-
-        <span>STATUS</span>
-
-        <strong>
-          ACTIVE
-        </strong>
-
-      </div>
-
-
-      <div class="profile-data-row">
-
-        <span>MEMBER SINCE</span>
-
-        <strong>
-          2026
-        </strong>
-
-      </div>
-
-
-      <div class="profile-data-row">
-
-        <span>ARCHIVE</span>
-
-        <strong>
-          AURORA
-        </strong>
-
-      </div>
-
-
-      <div class="profile-data-row">
-
-        <span>ACCESS</span>
-
-        <strong>
-          OFFICIAL
-        </strong>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         PROFILE CONNECTIONS
-    ========================================== -->
-    <section class="profile-connections">
-
-      <div class="section-heading">
-
-        <span class="section-label">
-          EXPLORE
-        </span>
-
-        <h2>
-          Inside Aurora
-        </h2>
-
-      </div>
-
-
-      <a href="timeline.html" class="profile-link-card">
+      <div class="profile-footer-grid">
 
         <div>
-          <span class="profile-link-number">01</span>
-
-          <strong>
-            Timeline
-          </strong>
-
-          <small>
-            Follow the story chronologically.
-          </small>
+          <strong>04</strong>
+          <span>ENTITIES INDEXED</span>
         </div>
-
-        <span class="profile-link-arrow">
-          →
-        </span>
-
-      </a>
-
-
-      <a href="publications.html" class="profile-link-card">
 
         <div>
-          <span class="profile-link-number">02</span>
-
-          <strong>
-            Publications
-          </strong>
-
-          <small>
-            Words, ideas and written pieces.
-          </small>
+          <strong>01</strong>
+          <span>CASE ACTIVE</span>
         </div>
-
-        <span class="profile-link-arrow">
-          →
-        </span>
-
-      </a>
-
-
-      <a href="artifacts.html" class="profile-link-card">
 
         <div>
-          <span class="profile-link-number">03</span>
-
-          <strong>
-            Artifacts
-          </strong>
-
-          <small>
-            Objects and fragments from the archive.
-          </small>
+          <strong>02</strong>
+          <span>SYSTEMS ACTIVE</span>
         </div>
 
-        <span class="profile-link-arrow">
-          →
-        </span>
+        <div>
+          <strong>01</strong>
+          <span>SUBJECT RESTRICTED</span>
+        </div>
 
+      </div>
+
+
+      <div class="profile-footer-status">
+        ARCHIVE STATUS:
+        <strong>OPEN</strong>
+      </div>
+
+
+      <blockquote>
+        “Some records tell you who is here.
+        Others tell you why they are here.
+        The remaining records will have to be discovered.”
+      </blockquote>
+
+
+      <a
+        href="index.html"
+        class="profile-return"
+      >
+        RETURN TO HEADQUARTERS
+        <span>→</span>
       </a>
-
-    </section>
-
-
-    <!-- =========================================
-         PROFILE QUOTE
-    ========================================== -->
-    <section class="profile-quote">
-
-      <span class="quote-mark">
-        “
-      </span>
-
-      <p>
-        Some things are not meant
-        to be explained.
-        They are meant to be kept.
-      </p>
-
-    </section>
-
-
-    <!-- =========================================
-         FOOTER
-    ========================================== -->
-    <section class="profile-end">
-
-      <span class="profile-end-line"></span>
-
-      <p>
-        PROJECT AURORA
-        <br>
-        OFFICIAL MEMBER ARCHIVE
-      </p>
 
     </section>
 
   </main>
 
 
-  <!-- =========================================
-       SLIDE MENU
-  ========================================== -->
+  <!-- =========================================================
+       SLIDE-OUT MENU
+  ========================================================== -->
+
   <div
+    class="aurora-menu-backdrop"
+    id="menuBackdrop"
+  ></div>
+
+
+  <aside
     class="aurora-menu"
     id="auroraMenu"
     aria-hidden="true"
   >
 
-    <div
-      class="menu-backdrop"
-      id="menuBackdrop"
-    ></div>
+    <div class="aurora-menu-header">
 
+      <div>
 
-    <aside class="menu-panel">
-
-      <div class="menu-panel-header">
-
-        <span class="menu-label">
+        <span class="aurora-menu-label">
           PROJECT AURORA
         </span>
 
-        <button
-          class="menu-close"
-          id="menuClose"
-          type="button"
-          aria-label="Close menu"
-        >
-          ×
-        </button>
+        <strong>
+          SYSTEM MENU
+        </strong>
 
       </div>
 
+      <button
+        id="menuClose"
+        class="aurora-menu-close"
+        type="button"
+        aria-label="Close menu"
+      >
+        ×
+      </button>
 
-      <nav class="menu-navigation">
-
-        <a href="index.html">
-          <span>01</span>
-          <strong>HOME</strong>
-        </a>
-
-        <a href="notifications.html">
-          <span>02</span>
-          <strong>NOTIFICATIONS</strong>
-        </a>
-
-        <a href="timeline.html">
-          <span>03</span>
-          <strong>TIMELINE</strong>
-        </a>
-
-        <a href="publications.html">
-          <span>04</span>
-          <strong>PUBLICATIONS</strong>
-        </a>
-
-        <a href="artifacts.html">
-          <span>05</span>
-          <strong>ARTIFACTS</strong>
-        </a>
-
-        <a href="profile.html">
-          <span>06</span>
-          <strong>PROFILE</strong>
-        </a>
-
-      </nav>
+    </div>
 
 
-      <div class="menu-divider"></div>
+    <nav class="aurora-menu-links">
+
+      <a
+        href="index.html"
+        data-menu-link
+      >
+        <span>HEADQUARTERS</span>
+        <small>HOME</small>
+      </a>
 
 
-      <div class="menu-external">
-
-        <span class="menu-section-label">
-          EXTERNAL
-        </span>
-
-        <a
-          href="https://example.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>K</span>
-          KAIROS
-          <small>↗</small>
-        </a>
-
-        <a
-          href="https://example.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>B</span>
-          BLACK AURORA STUDIOS
-          <small>↗</small>
-        </a>
-
-      </div>
+      <a
+        href="notifications.html"
+        data-menu-link
+      >
+        <span>SIGNAL NOTIFICATIONS</span>
+        <small>03 SIGNALS</small>
+      </a>
 
 
-      <div class="menu-footer">
-        <span>PROJECT AURORA</span>
-        <span>EST. 2026</span>
-      </div>
+      <a
+        href="briefing.html"
+        data-menu-link
+      >
+        <span>BRIEFING ROOM</span>
+        <small>CLASSIFIED ARCHIVE</small>
+      </a>
 
-    </aside>
 
-  </div>
+      <a
+        href="profile.html"
+        data-menu-link
+      >
+        <span>PROFILE DIRECTORY</span>
+        <small>04 ENTITIES</small>
+      </a>
 
 
-  <!-- =========================================
+      <a
+        href="artifacts.html"
+        data-menu-link
+      >
+        <span>ARTIFACT ARCHIVE</span>
+        <small>CASE 17</small>
+      </a>
+
+
+      <a
+        href="timeline.html"
+        data-menu-link
+      >
+        <span>THE TIMELINE</span>
+        <small>AURORA WEEK</small>
+      </a>
+
+
+      <div class="aurora-menu-divider"></div>
+
+
+      <a
+        href="https://example.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="menu-external"
+      >
+        <span>KAIROS</span>
+        <small>MISSION DIRECTOR ↗</small>
+      </a>
+
+    </nav>
+
+
+    <div class="aurora-menu-footer">
+
+      <span>CASE 17</span>
+      <span>LEVEL 01</span>
+      <span>ACTIVE</span>
+
+    </div>
+
+  </aside>
+
+
+  <!-- =========================================================
        BOTTOM NAVIGATION
-  ========================================== -->
-  <nav
-    class="bottom-navigation"
-    aria-label="Primary navigation"
-  >
+  ========================================================== -->
+
+  <nav class="aurora-bottom-nav">
 
     <a
       href="index.html"
-      class="bottom-nav-item"
+      data-nav
+      class="bottom-nav-link"
     >
       <span class="bottom-nav-icon">⌂</span>
       <span>HOME</span>
@@ -434,67 +1718,46 @@
 
     <a
       href="notifications.html"
-      class="bottom-nav-item"
+      data-nav
+      class="bottom-nav-link"
     >
-      <span class="bottom-nav-icon">◌</span>
+      <span class="bottom-nav-icon notification-nav-icon">
+        ◌
+      </span>
+
       <span>NOTIFICATIONS</span>
+
+      <i class="nav-notification-dot"></i>
     </a>
 
 
     <a
       href="https://example.com"
-      class="bottom-nav-item"
       target="_blank"
       rel="noopener noreferrer"
+      class="bottom-nav-link"
     >
-      <span class="bottom-nav-icon">✦</span>
+      <span class="bottom-nav-icon">◈</span>
       <span>KAIROS</span>
     </a>
 
 
     <a
       href="profile.html"
-      class="bottom-nav-item active"
-      aria-current="page"
+      data-nav
+      class="bottom-nav-link active"
     >
-      <span class="bottom-nav-icon">○</span>
+      <span class="bottom-nav-icon">◉</span>
       <span>PROFILE</span>
     </a>
 
   </nav>
 
-<!-- FULL WEBSITE LOCK -->
-<div id="siteLock" class="site-lock">
-  <div class="site-lock-content">
 
-    <div class="big-lock">
-      🔒
-    </div>
+  <!-- =========================================================
+       SCRIPTS
+  ========================================================== -->
 
-    <div class="site-lock-line"></div>
-
-    <div class="site-lock-label">
-      PROJECT AURORA
-    </div>
-
-    <h1>LOCKED</h1>
-
-    <p>THE ARCHIVE IS CURRENTLY SEALED.</p>
-
-    <div class="unlock-box">
-      <span>UNLOCK AT</span>
-      <strong>20 SEPT · 3:00 AM</strong>
-    </div>
-
-    <div id="lockCountdown" class="lock-countdown">
-      INITIALIZING...
-    </div>
-
-  </div>
-</div>
-  <!-- =========================================
-       JAVASCRIPT
-  ========================================== -->
   <script src="global.js"></script>
   <script src="profile.js"></script>
 
